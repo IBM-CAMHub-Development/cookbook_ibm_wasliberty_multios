@@ -1,0 +1,497 @@
+{
+    "was_liberty": {
+        "base_version": {
+            "default": "16.0.4",
+            "description": "liberty version",
+            "displayname": "liberty version",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "cleanpackages": {
+            "default": "",
+            "description": "Flag to remove installation archives after extraction",
+            "displayname": "cleanpackages",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "create_os_users": {
+            "default": "",
+            "description": "Create the OS users: true or false",
+            "displayname": "create_os_users",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "true",
+            "type": "string"
+        },
+        "edition": {
+            "default": "",
+            "description": "Liberty edition to be installed",
+            "displayname": "liberty_edition",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "true",
+            "type": "string"
+        },
+        "features": {
+            "embeddablecontainer": {
+                "default": "true",
+                "description": "Liberty embeddablecontainer feature",
+                "displayname": "embeddablecontainer_feature",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "true",
+                "type": "string"
+            },
+            "liberty": {
+                "default": "true",
+                "description": "liberty feature",
+                "displayname": "liberty_feature",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "true",
+                "type": "string"
+            }
+        },
+        "fixpack": {
+            "default": "",
+            "description": "liberty fixpack version",
+            "displayname": "liberty fixpack version",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "fixpack_java": {
+            "default": "",
+            "description": "java fixpack version",
+            "displayname": "java_fixpack_version",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "force_restart": {
+            "default": "true",
+            "description": "force_restart",
+            "displayname": "force server restart",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "type": "string"
+        },
+        "im_install_dir": {
+            "default": "",
+            "description": "IM install dir",
+            "displayname": "im_install_dir",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "im_shared_dir": {
+            "default": "",
+            "description": "IM shared dir",
+            "displayname": "im_shared_dir",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "install_dir": {
+            "default": "",
+            "description": "Liberty install dir",
+            "displayname": "install_dir",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "install_grp": {
+            "default": "",
+            "description": "Liberty install group",
+            "displayname": "install_group",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "install_java": {
+            "default": "true",
+            "description": "install_java_flag",
+            "displayname": "install_java flag",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "true",
+            "type": "string"
+        },
+        "install_javafp": {
+            "default": "true",
+            "description": "install_javafp_flag",
+            "displayname": "install_javafp flag",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "true",
+            "type": "string"
+        },
+        "install_user": {
+            "default": "",
+            "description": "Liberty install user",
+            "displayname": "install_user",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "java_version": {
+            "default": "8.0",
+            "description": "java version",
+            "displayname": "java version",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "liberty_servers": {
+            "server01": {
+                "feature": {
+                    "default": "webProfile-7.0 adminCenter-1.0",
+                    "description": "liberty server01 feature",
+                    "displayname": "liberty_server01_feature",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "httpport": {
+                    "default": "9080",
+                    "description": "liberty server01 httpport",
+                    "displayname": "liberty_server01_httpport",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "httpsport": {
+                    "default": "9443",
+                    "description": "liberty server01 httpsport",
+                    "displayname": "liberty_server01_httpsport",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "jvm_params": {
+                    "default": "false",
+                    "description": "liberty server01 jvm_params",
+                    "displayname": "liberty_server01_jvm_params",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "type": "string"
+                },
+                "keystore_id": {
+                    "default": "defaultKeyStore",
+                    "description": "liberty server01 keystore_id",
+                    "displayname": "liberty_server01_keystore_id",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "keystore_password": {
+                    "default": "",
+                    "description": "liberty server01 keystore_password",
+                    "displayname": "liberty_server01_keystore_password",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "secret": "true",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "name": {
+                    "default": "srv01",
+                    "description": "liberty server name",
+                    "displayname": "liberty_server_name",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "timeout": {
+                    "default": "20",
+                    "description": "liberty server01 timeout",
+                    "displayname": "liberty_server01_timeout",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "users": {
+                    "user01": {
+                        "name": {
+                            "default": "admin1",
+                            "description": "liberty server01 user01 name",
+                            "displayname": "liberty_server01_user01_name",
+                            "parm_type": "node",
+                            "precedence_level": "node",
+                            "required": "recommended",
+                            "selectable": "false",
+                            "type": "string"
+                        },
+                        "password": {
+                            "default": "",
+                            "description": "liberty server01 user01 password",
+                            "displayname": "liberty_server01_user01_password",
+                            "parm_type": "node",
+                            "precedence_level": "node",
+                            "required": "recommended",
+                            "secret": "true",
+                            "selectable": "false",
+                            "type": "string"
+                        },
+                        "role": {
+                            "default": "admin",
+                            "description": "liberty server01 user01 role",
+                            "displayname": "liberty_server01_user01_role",
+                            "parm_type": "node",
+                            "precedence_level": "node",
+                            "required": "recommended",
+                            "selectable": "false",
+                            "type": "string"
+                        }
+                    },
+                    "user02": {
+                        "name": {
+                            "default": "nonadmin1",
+                            "description": "liberty server01 user02 name",
+                            "displayname": "liberty_server01_user02_name",
+                            "parm_type": "node",
+                            "precedence_level": "node",
+                            "required": "recommended",
+                            "selectable": "false",
+                            "type": "string"
+                        },
+                        "password": {
+                            "default": "",
+                            "description": "liberty server01 user02 password",
+                            "displayname": "liberty_server01_user02_password",
+                            "parm_type": "node",
+                            "precedence_level": "node",
+                            "required": "recommended",
+                            "secret": "true",
+                            "selectable": "false",
+                            "type": "string"
+                        },
+                        "role": {
+                            "default": "nonadmin",
+                            "description": "liberty server01 user02 role",
+                            "displayname": "liberty_server01_user02_role",
+                            "parm_type": "node",
+                            "precedence_level": "node",
+                            "required": "recommended",
+                            "selectable": "false",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "sdk": {
+            "common_ibm_sdk_v71": {
+                "enable": {
+                    "default": "false",
+                    "description": "flag for installing java common_ibm_sdk_v71",
+                    "displayname": "common_ibm_sdk_v71_enable",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "true",
+                    "type": "string"
+                },
+                "feature": {
+                    "default": "com.ibm.sdk.71",
+                    "description": "feature name for java common_ibm_sdk_v71",
+                    "displayname": "common_ibm_sdk_v71_feature",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "offering_id": {
+                    "default": "com.ibm.java.jdk.v71",
+                    "description": "offering _id for java common_ibm_sdk_v71",
+                    "displayname": "common_ibm_sdk_v71_offering_id",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                }
+            },
+            "common_ibm_sdk_v8": {
+                "enable": {
+                    "default": "true",
+                    "description": "flag for installing java common_ibm_sdk_v8",
+                    "displayname": "common_ibm_sdk_v8_enable",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "true",
+                    "type": "string"
+                },
+                "feature": {
+                    "default": "com.ibm.sdk.8",
+                    "description": "feature name for java common_ibm_sdk_v8",
+                    "displayname": "common_ibm_sdk_v8_feature",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "offering_id": {
+                    "default": "com.ibm.java.jdk.v8",
+                    "description": "offering _id for java common_ibm_sdk_v8",
+                    "displayname": "common_ibm_sdk_v8_offering_id",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                }
+            },
+            "websphere_sdk_v70": {
+                "enable": {
+                    "default": "false",
+                    "description": "flag for installing java websphere_sdk_v70",
+                    "displayname": "websphere_sdk_v70_enable",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "true",
+                    "type": "string"
+                },
+                "feature": {
+                    "default": "com.ibm.sdk.7",
+                    "description": "feature name for java websphere_sdk_v70",
+                    "displayname": "websphere_sdk_v70_feature",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "offering_id": {
+                    "default": "com.ibm.websphere.liberty.IBMJAVA.v70",
+                    "description": "offering _id for java websphere_sdk_v70",
+                    "displayname": "websphere_sdk_v70_offering_id",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                }
+            },
+            "websphere_sdk_v80": {
+                "enable": {
+                    "default": "false",
+                    "description": "flag for installing java websphere_sdk_v80",
+                    "displayname": "websphere_sdk_v80_enable",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "true",
+                    "type": "string"
+                },
+                "feature": {
+                    "default": "com.ibm.sdk.8",
+                    "description": "feature name for java websphere_sdk_v80",
+                    "displayname": "websphere_sdk_v80_feature",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "offering_id": {
+                    "default": "com.ibm.websphere.liberty.IBMJAVA.v80",
+                    "description": "offering _id for java websphere_sdk_v80",
+                    "displayname": "websphere_sdk_v80_offering_id",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "selectable": "false",
+                    "type": "string"
+                }
+            }
+        },
+        "start_servers": {
+            "default": "",
+            "description": "List of servers to be started",
+            "displayname": "start_servers",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "stop_servers": {
+            "default": "",
+            "description": "List of servers to be stopped",
+            "displayname": "stop_servers",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "tmp": {
+            "default": "",
+            "description": "Temp directory to be used",
+            "displayname": "temp_dir",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        },
+        "wlp_user_dir": {
+            "default": "",
+            "description": "Liberty directory for user data",
+            "displayname": "wlp_user_dir",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "selectable": "false",
+            "type": "string"
+        }
+    }
+}

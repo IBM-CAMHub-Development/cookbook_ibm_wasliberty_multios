@@ -1,0 +1,190 @@
+[
+    {
+        "attributes": {
+            "ibm": {
+                "im_repo": "",
+                "im_repo_password": "",
+                "im_repo_user": "repouser",
+                "sw_repo": "",
+                "sw_repo_password": "",
+                "sw_repo_user": "repouser"
+            },
+            "was_liberty": {
+                "base_version": "16.0.4",
+                "edition": "base",
+                "im_install_dir": "/opt/IBM/InstallationManager",
+                "install_dir": "/opt/IBM/WebSphere/Liberty",
+                "install_grp": "root",
+                "install_user": "root",
+                "java_version": "8.0",
+                "wlp_user_dir": "/var/liberty/usr"
+            }
+        },
+        "depends_on": [],
+        "description": "installs WAS Liberty Base",
+        "displayname": "was_liberty_base_install",
+        "name": "was_liberty_base_install",
+        "objectname": "was_liberty_base_install",
+        "type": "chef_role"
+    },
+    {
+        "attributes": {
+            "ibm": {
+                "im_repo": "",
+                "im_repo_password": "",
+                "im_repo_user": "repouser",
+                "sw_repo": "",
+                "sw_repo_password": "",
+                "sw_repo_user": "repouser"
+            },
+            "was_liberty": {
+                "base_version": "16.0.4",
+                "edition": "core",
+                "im_install_dir": "/opt/IBM/InstallationManager",
+                "install_dir": "/opt/IBM/WebSphere/Liberty",
+                "install_grp": "root",
+                "install_user": "root",
+                "java_version": "8.0",
+                "liberty_servers": {
+                    "server01": {
+                        "feature": "webProfile-7.0 adminCenter-1.0",
+                        "httpport": "9080",
+                        "httpsport": "9443",
+                        "jvm_params": "-Xms256m -Xmx2048m",
+                        "keystore_id": "defaultKeyStore",
+                        "keystore_password": "",
+                        "name": "srv01",
+                        "timeout": "15",
+                        "users": {
+                            "user01": {
+                                "name": "admin1",
+                                "password": "",
+                                "role": "admin"
+                            },
+                            "user02": {
+                                "name": "nonadmin1",
+                                "password": "",
+                                "role": "nonadmin"
+                            }
+                        }
+                    }
+                },
+                "wlp_user_dir": "/var/liberty/usr"
+            }
+        },
+        "depends_on": [],
+        "description": "installs WAS Liberty Core",
+        "displayname": "was_liberty_core_baseconfig",
+        "name": "was_liberty_core_baseconfig",
+        "objectname": "was_liberty_core_baseconfig",
+        "type": "chef_role"
+    },
+    {
+        "attributes": {
+            "ibm": {
+                "im_repo": "",
+                "im_repo_password": "",
+                "im_repo_user": "repouser",
+                "sw_repo": "",
+                "sw_repo_password": "",
+                "sw_repo_user": "repouser"
+            },
+            "was_liberty": {
+                "base_version": "16.0.4",
+                "edition": "core",
+                "im_install_dir": "/opt/IBM/InstallationManager",
+                "install_dir": "/opt/IBM/WebSphere/Liberty",
+                "install_grp": "root",
+                "install_user": "root",
+                "java_version": "8.0",
+                "wlp_user_dir": "/var/liberty/usr"
+            }
+        },
+        "depends_on": [],
+        "description": "installs WAS Liberty Core",
+        "displayname": "was_liberty_core_install",
+        "name": "was_liberty_core_install",
+        "objectname": "was_liberty_core_install",
+        "type": "chef_role"
+    },
+    {
+        "attributes": {
+            "was_liberty": {
+                "install_dir": "/opt/IBM/WebSphere/Liberty",
+                "wlp_user_dir": "/var/liberty/usr"
+            }
+        },
+        "depends_on": [],
+        "description": "uninstalls WAS Liberty Core",
+        "displayname": "was_liberty_core_uninstall",
+        "name": "was_liberty_core_uninstall",
+        "objectname": "was_liberty_core_uninstall",
+        "type": "chef_role"
+    },
+    {
+        "attributes": {
+            "ibm": {
+                "im_repo": "",
+                "im_repo_password": "",
+                "im_repo_user": "repouser",
+                "sw_repo": "",
+                "sw_repo_password": "",
+                "sw_repo_user": "repouser"
+            },
+            "was_liberty": {
+                "base_version": "16.0.4",
+                "edition": "nd",
+                "im_install_dir": "/opt/IBM/InstallationManager",
+                "install_dir": "/opt/IBM/WebSphere/Liberty",
+                "install_grp": "root",
+                "install_user": "root",
+                "java_version": "8.0",
+                "wlp_user_dir": "/var/liberty/usr"
+            }
+        },
+        "depends_on": [],
+        "description": "installs WAS Liberty ND",
+        "displayname": "was_liberty_nd_install",
+        "name": "was_liberty_nd_install",
+        "objectname": "was_liberty_nd_install",
+        "type": "chef_role"
+    },
+    {
+        "attributes": {
+            "was_liberty": {
+                "install_dir": "/opt/IBM/WebSphere/Liberty",
+                "liberty_servers": {
+                    "server01": {
+                        "feature": "webProfile-7.0 adminCenter-1.0",
+                        "httpport": "9080",
+                        "httpsport": "9443",
+                        "jvm_params": "-Xms256m -Xmx2048m",
+                        "keystore_id": "defaultKeyStore",
+                        "keystore_password": "",
+                        "name": "srv01",
+                        "timeout": "15",
+                        "users": {
+                            "user01": {
+                                "name": "admin1",
+                                "password": "",
+                                "role": "admin"
+                            },
+                            "user02": {
+                                "name": "nonadmin1",
+                                "password": "",
+                                "role": "nonadmin"
+                            }
+                        }
+                    }
+                },
+                "wlp_user_dir": "/var/liberty/usr"
+            }
+        },
+        "depends_on": [],
+        "description": "create and configure a liberty server instance",
+        "displayname": "was_liberty_srv_bootstrap",
+        "name": "was_liberty_srv_bootstrap",
+        "objectname": "was_liberty_srv_bootstrap",
+        "type": "chef_role"
+    }
+]

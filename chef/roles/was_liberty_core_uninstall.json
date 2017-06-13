@@ -1,0 +1,15 @@
+{
+    "name":"was_liberty_core_uninstall",
+    "description":"uninstalls WAS Liberty Core",
+    "json_class":"Chef::Role",
+    "chef_type":"role",
+    "default_attributes": {
+      "was_liberty" : {
+        "install_dir": "/opt/IBM/WebSphere/Liberty",
+        "wlp_user_dir": "/var/liberty/usr"
+      }
+    },
+    "run_list":[
+        "recipe[wasliberty::uninstall]"
+    ]
+}
