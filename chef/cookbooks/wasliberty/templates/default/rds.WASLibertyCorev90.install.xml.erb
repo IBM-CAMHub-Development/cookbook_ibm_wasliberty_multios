@@ -15,9 +15,13 @@
 </server>
 
 <install modify='false'>
-<offering id='<%= @OFFERING_ID %>' version='<%= @OFFERING_VERSION %>' profile='<%= @PROFILE_ID %>' features='<%= @FEATURE_LIST %>' installFixes='none'/>
+<offering id='<%= @OFFERING_ID %>' version='<%= @OFFERING_VERSION %>' profile='<%= @PROFILE_ID %>' features='<%= @FEATURE_LIST %>' installFixes='recommended'/>
 <% if @INSTALL_JAVA == "true" %>
-<offering id='<%= @JAVA_OFFERING_ID %>' version='<%= @JAVA_OFFERING_VERSION %>' profile='<%= @PROFILE_ID %>' features='<%= @JAVA_FEATURES %>' installFixes='none'/>
+  <% if @JAVA_OFFERING_VERSION.split('.').size > 2 && @JAVA_OFFERING_VERSION.split('.').first.to_i >= 8 %>
+<offering id='<%= @JAVA_OFFERING_ID %>' version='<%= @JAVA_OFFERING_VERSION %>' profile='<%= @PROFILE_ID %>' features='<%= @JAVA_FEATURES %>' installFixes='recommended'/>
+  <% else %>
+<offering id='<%= @JAVA_OFFERING_ID %>' profile='<%= @PROFILE_ID %>' features='<%= @JAVA_FEATURES %>' installFixes='recommended'/>
+  <% end %>
 <% end %>
 </install>
 

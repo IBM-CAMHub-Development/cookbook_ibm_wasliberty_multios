@@ -1,6 +1,6 @@
 {
-    "name":"was_liberty_core_install",
-    "description":"installs WAS Liberty Core",
+    "name": "liberty_install",
+    "description":"installs WAS Liberty Base",
     "json_class":"Chef::Role",
     "chef_type":"role",
     "default_attributes":{
@@ -13,14 +13,14 @@
         "im_repo_password" : ""
       },
       "was_liberty" : {
-        "edition": "core",
+        "edition": "base",
         "install_user": "root",
         "install_grp": "root",
         "install_dir" : "/opt/IBM/WebSphere/Liberty",
         "im_install_dir" : "/opt/IBM/InstallationManager",
         "java_version" : "8.0",
-        "base_version" : "16.0.4",
-        "wlp_user_dir": "/var/liberty/usr"
+        "base_version" : "17.0.2",
+        "wlp_user_dir": "/opt/IBM/WebSphere/Liberty/usr"
       }
     },
     "run_list":[

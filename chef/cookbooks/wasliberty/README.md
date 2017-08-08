@@ -43,6 +43,16 @@ Attributes
     <td>Default</td>
   </tr>
   <tr>
+    <td><code>node['ssh']['private_key']['content']</code></td>
+    <td>the content of the private ssh key</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['ssh']['private_key']['path']</code></td>
+    <td>the path where the private ssh key will be stored</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
     <td><code>node['was_liberty']['base_version']</code></td>
     <td>liberty version</td>
     <td><code>16.0.4</code></td>
@@ -60,6 +70,81 @@ Attributes
   <tr>
     <td><code>node['was_liberty']['edition']</code></td>
     <td>Liberty edition to be installed</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['central_node']</code></td>
+    <td>hotname/IP of the liberty node which will gather and merge the plugins. Leave empty when deploying the central node itself</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['httpd_plugins_dir']</code></td>
+    <td>the directory on the web server where the merged plugin will be pushed</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['httpd_user']</code></td>
+    <td>the user for pushing the merged plugin file to the web server host</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['logFileName']</code></td>
+    <td>liberty farm log File Name</td>
+    <td><code>serverfarm.log</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['mergedplugins_dir']</code></td>
+    <td>the directory where the merged plugins are stored</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['pluginInstallRoot']</code></td>
+    <td>liberty farm plugin Install Root</td>
+    <td><code>plugin_install_root</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['plugin_cpy_user']</code></td>
+    <td>the user for pushing the plugins to the central liberty node</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['plugins_dir']</code></td>
+    <td>the directory where the generated plugins are stored</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['sslCertlabel']</code></td>
+    <td>liberty farm ssl Cert label</td>
+    <td><code>definedbyuser</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['sslKeyringLocation']</code></td>
+    <td>liberty farm ssl Keyring Location</td>
+    <td><code>/var/liberty/sslkeyring</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['sslStashfileLocation']</code></td>
+    <td>liberty farm ssl Stashfile Location</td>
+    <td><code>/var/liberty/stashfile</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['webserverName']</code></td>
+    <td>https web server name</td>
+    <td><code>websrv</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['webserverPort']</code></td>
+    <td>http port of the web server</td>
+    <td><code>80</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['webserverSecurePort']</code></td>
+    <td>https port of the web server</td>
+    <td><code>9043</code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['farm']['webserverhost']</code></td>
+    <td>hostname/IP of the webserver</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -160,7 +245,7 @@ Attributes
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['name']</code></td>
     <td>liberty server name</td>
-    <td><code>srv01</code></td>
+    <td><code>defaultServer</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['timeout']</code></td>
@@ -168,34 +253,19 @@ Attributes
     <td><code>20</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['user01']['name']</code></td>
-    <td>liberty server01 user01 name</td>
-    <td><code>admin1</code></td>
-  </tr>
-  <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['user01']['password']</code></td>
-    <td>liberty server01 user01 password</td>
-    <td><code></code></td>
-  </tr>
-  <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['user01']['role']</code></td>
-    <td>liberty server01 user01 role</td>
+    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['name']</code></td>
+    <td>liberty server01 admin_user name</td>
     <td><code>admin</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['user02']['name']</code></td>
-    <td>liberty server01 user02 name</td>
-    <td><code>nonadmin1</code></td>
-  </tr>
-  <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['user02']['password']</code></td>
-    <td>liberty server01 user02 password</td>
+    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['password']</code></td>
+    <td>liberty server01 admin_user password</td>
     <td><code></code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['user02']['role']</code></td>
-    <td>liberty server01 user02 role</td>
-    <td><code>nonadmin</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['role']</code></td>
+    <td>liberty server01 admin_user role</td>
+    <td><code>admin</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v71']['enable']</code></td>

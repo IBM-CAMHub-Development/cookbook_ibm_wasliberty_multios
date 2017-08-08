@@ -47,14 +47,6 @@ if node['was_liberty']['create_os_users'] == 'true'
   end
 end
 
-directory node['was_liberty']['wlp_user_dir'] do
-  recursive true
-  action :create
-  owner node['was_liberty']['install_user']
-  group node['was_liberty']['install_grp']
-end
-
-
 ["#{node['was_liberty']['expand_area']}/was-v90", node['was_liberty']['tmp']].each do |dir|
   directory dir do
     recursive true

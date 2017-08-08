@@ -142,9 +142,9 @@ end
 
 # <> IBM Installation Manager profile to be used for installation, based on WAS edition
 default['was_liberty']['profile_id'] = {
-  'core'  => 'WebSphere Liberty',
+  'core'  => 'WebSphere Liberty Core',
   'base'  => 'WebSphere Liberty',
-  'nd'  => 'WebSphere Liberty'
+  'nd'  => 'WebSphere Liberty ND'
 }
 
 # <> IBM Installation Manager offering ID to be used for installation, based on WAS edition

@@ -158,7 +158,7 @@ default['was_liberty']['create_os_users'] = 'true'
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'none'
 default['was_liberty']['edition'] = 'base'
 # NOTE: only one value can be set to true
 # <> WAS Liberty edition to install and configure
@@ -436,7 +436,7 @@ default['was_liberty']['force_restart'] = true
 
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => 'srv01',
+# <md>          :default => 'defaultServer',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
@@ -449,7 +449,7 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => '-Xms256m -Xmx2048m',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'none'
 # <md> attribute 'was_liberty/liberty_servers/server01/timeout',
 # <md>          :description => 'liberty server01 timeout',
 # <md>          :displayname => 'liberty_server01_timeout',
@@ -511,30 +511,9 @@ default['was_liberty']['force_restart'] = true
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
 # <md>          :secret => 'true'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/user01/name',
-# <md>          :description => 'liberty server01 user01 name',
-# <md>          :displayname => 'liberty_server01_user01_name',
-
-# <md>          :type => 'string',
-# <md>          :required => 'recommended',
-# <md>          :default => 'admin1',
-# <md>          :selectable => 'false',
-# <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/user01/password',
-# <md>          :description => 'liberty server01 user01 password',
-# <md>          :displayname => 'liberty_server01_user01_password',
-
-# <md>          :type => 'string',
-# <md>          :required => 'recommended',
-# <md>          :default => '',
-# <md>          :selectable => 'false',
-# <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node',
-# <md>          :secret => 'true'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/user01/role',
-# <md>          :description => 'liberty server01 user01 role',
-# <md>          :displayname => 'liberty_server01_user01_role',
+# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/name',
+# <md>          :description => 'liberty server01 admin_user name',
+# <md>          :displayname => 'liberty_server01_admin_user_name',
 
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
@@ -542,19 +521,9 @@ default['was_liberty']['force_restart'] = true
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/user02/name',
-# <md>          :description => 'liberty server01 user02 name',
-# <md>          :displayname => 'liberty_server01_user02_name',
-
-# <md>          :type => 'string',
-# <md>          :required => 'recommended',
-# <md>          :default => 'nonadmin1',
-# <md>          :selectable => 'false',
-# <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/user02/password',
-# <md>          :description => 'liberty server01 user02 password',
-# <md>          :displayname => 'liberty_server01_user02_password',
+# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/password',
+# <md>          :description => 'liberty server01 admin_user password',
+# <md>          :displayname => 'liberty_server01_admin_user_password',
 
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
@@ -563,18 +532,19 @@ default['was_liberty']['force_restart'] = true
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
 # <md>          :secret => 'true'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/user02/role',
-# <md>          :description => 'liberty server01 user02 role',
-# <md>          :displayname => 'liberty_server01_user02_role',
+# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/role',
+# <md>          :description => 'liberty server01 admin_user role',
+# <md>          :displayname => 'liberty_server01_admin_user_role',
 
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => 'nonadmin',
+# <md>          :default => 'admin',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
+
 default['was_liberty']['liberty_servers'] = {
-  'server01' => { 'name' => "srv01",
+  'server01' => { 'name' => "defaultServer",
                   'jvm_params' => "-Xms256m -Xmx2048m",
                   'timeout' => "20",
                   'httpport' => "9080",
@@ -583,29 +553,213 @@ default['was_liberty']['liberty_servers'] = {
                   'keystore_id' => "defaultKeyStore",
                   'keystore_password' => "",
                   'users' => {
-                    'user01' => {
-                      'name' => "admin1",
+                    'admin_user' => {
+                      'name' => "admin",
                       'password' => "",
                       'role' => "admin"
-                    },
-                    'user02' => {
-                      'name' => "nonadmin1",
-                      'password' => "",
-                      'role' => "nonadmin"
                     }
                   }
                 }
 }
 
 # server farm configuration
-default['was_liberty']['webserverPort'] = '80'
+# <md> attribute 'was_liberty/farm/webserverhost',
+# <md>          :description => 'hostname/ip of the web server',
+# <md>          :displayname => 'webserverhost',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['webserverhost'] = ''
 
-default['was_liberty']['webserverSecurePort'] = '81'
+# <md> attribute 'was_liberty/farm/webserverPort',
+# <md>          :description => 'http port of the web server',
+# <md>          :displayname => 'webserverPort',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '80',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['webserverPort'] = '80'
 
-default['was_liberty']['webserverName'] = 'websrv'
+# <md> attribute 'was_liberty/farm/webserverSecurePort',
+# <md>          :description => 'https port of the web server',
+# <md>          :displayname => 'webserverSecurePort',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '9043',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['webserverSecurePort'] = '9043'
 
-default['was_liberty']['sslKeyringLocation'] = '/tmp/liberty/sslkeyring'
+# <md> attribute 'was_liberty/farm/webserverName',
+# <md>          :description => 'https web server name',
+# <md>          :displayname => 'webserverName',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => 'websrv',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['webserverName'] = 'websrv'
 
-default['was_liberty']['sslStashfileLocation'] = 'tmp/liberty/stashfile'
+# <md> attribute 'was_liberty/farm/httpd_plugins_dir',
+# <md>          :description => 'the directory on the web server where the merged plugin will be pushed',
+# <md>          :displayname => 'httpd_plugins_dir',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['httpd_plugins_dir'] = ''
 
-default['was_liberty']['sslCertlabel'] = 'definedbyuser'
+# <md> attribute 'was_liberty/farm/httpd_user',
+# <md>          :description => 'the user for pushing the merged plugin file to the web server host',
+# <md>          :displayname => 'httpd_user',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['httpd_user'] = ''
+
+# <md> attribute 'was_liberty/farm/sslKeyringLocation',
+# <md>          :description => 'liberty farm ssl Keyring Location',
+# <md>          :displayname => 'sslKeyringLocation',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '/var/liberty/sslkeyring',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['sslKeyringLocation'] = '/var/liberty/sslkeyring'
+
+# <md> attribute 'was_liberty/farm/sslStashfileLocation',
+# <md>          :description => 'liberty farm ssl Stashfile Location',
+# <md>          :displayname => 'sslStashfileLocation',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '/var/liberty/stashfile',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['sslStashfileLocation'] = '/var/liberty/stashfile'
+
+# <md> attribute 'was_liberty/farm/sslCertlabel',
+# <md>          :description => 'liberty farm ssl Cert label',
+# <md>          :displayname => 'sslCertlabel',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => 'definedbyuser',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['sslCertlabel'] = 'definedbyuser'
+
+# <md> attribute 'was_liberty/farm/logFileName',
+# <md>          :description => 'liberty farm log File Name',
+# <md>          :displayname => 'logFileName',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => 'serverfarm.log',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['logFileName'] = "serverfarm.log"
+
+# <md> attribute 'was_liberty/farm/pluginInstallRoot',
+# <md>          :description => 'liberty farm plugin Install Root',
+# <md>          :displayname => 'pluginInstallRoot',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => 'plugin_install_root',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['pluginInstallRoot'] = "plugin_install_root"
+
+
+# server plugins settings
+# <md> attribute 'was_liberty/farm/central_node',
+# <md>          :description => 'hotname/IP of the liberty node which will gather and merge the plugins. Leave empty when deploying the central node itself',
+# <md>          :displayname => 'central_node',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['central_node'] = ''
+
+# <md> attribute 'was_liberty/farm/plugins_dir',
+# <md>          :description => 'the directory where the generated plugins are stored',
+# <md>          :displayname => 'plugins_dir',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['plugins_dir'] = "#{node['was_liberty']['wlp_user_dir']}/tmp"
+
+# <md> attribute 'was_liberty/farm/mergedplugins_dir',
+# <md>          :description => 'the directory where the merged plugins are stored',
+# <md>          :displayname => 'mergedplugins_dir',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['mergedplugins_dir'] = "#{node['was_liberty']['farm']['plugins_dir']}/merged"
+
+# <md> attribute 'was_liberty/farm/plugin_cpy_user',
+# <md>          :description => 'the user for pushing the plugins to the central liberty node',
+# <md>          :displayname => 'plugin_cpy_user',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['plugin_cpy_user'] = node['was_liberty']['install_user']
+
+# <md> attribute 'was_liberty/farm/webserverhost',
+# <md>          :description => 'hostname/IP of the webserver',
+# <md>          :displayname => 'webserverhost',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['was_liberty']['farm']['webserverhost'] = ''
+
+# <md> attribute 'ssh/private_key/path',
+# <md>          :description => 'the path where the private ssh key will be stored',
+# <md>          :displayname => 'private_key_path',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+default['ssh']['private_key']['path'] = '/root/.ssh/CAMkey.pem'
+
+# <md> attribute 'ssh/private_key/content',
+# <md>          :description => 'the content of the private ssh key',
+# <md>          :displayname => 'private_key_content',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node'
+# <md>          :secret => 'true'
+default['ssh']['private_key']['content'] = ''

@@ -1,4 +1,28 @@
 {
+    "ssh": {
+        "private_key": {
+            "content": {
+                "default": "",
+                "description": "the content of the private ssh key",
+                "displayname": "private_key_content",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "path": {
+                "default": "",
+                "description": "the path where the private ssh key will be stored",
+                "displayname": "private_key_path",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            }
+        }
+    },
     "was_liberty": {
         "base_version": {
             "default": "16.0.4",
@@ -34,11 +58,163 @@
             "default": "",
             "description": "Liberty edition to be installed",
             "displayname": "liberty_edition",
-            "parm_type": "node",
+            "parm_type": "none",
             "precedence_level": "node",
             "required": "recommended",
             "selectable": "true",
             "type": "string"
+        },
+        "farm": {
+            "central_node": {
+                "default": "",
+                "description": "hotname/IP of the liberty node which will gather and merge the plugins. Leave empty when deploying the central node itself",
+                "displayname": "central_node",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "httpd_plugins_dir": {
+                "default": "",
+                "description": "the directory on the web server where the merged plugin will be pushed",
+                "displayname": "httpd_plugins_dir",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "httpd_user": {
+                "default": "",
+                "description": "the user for pushing the merged plugin file to the web server host",
+                "displayname": "httpd_user",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "logFileName": {
+                "default": "serverfarm.log",
+                "description": "liberty farm log File Name",
+                "displayname": "logFileName",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "mergedplugins_dir": {
+                "default": "",
+                "description": "the directory where the merged plugins are stored",
+                "displayname": "mergedplugins_dir",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "pluginInstallRoot": {
+                "default": "plugin_install_root",
+                "description": "liberty farm plugin Install Root",
+                "displayname": "pluginInstallRoot",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "plugin_cpy_user": {
+                "default": "",
+                "description": "the user for pushing the plugins to the central liberty node",
+                "displayname": "plugin_cpy_user",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "plugins_dir": {
+                "default": "",
+                "description": "the directory where the generated plugins are stored",
+                "displayname": "plugins_dir",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "sslCertlabel": {
+                "default": "definedbyuser",
+                "description": "liberty farm ssl Cert label",
+                "displayname": "sslCertlabel",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "sslKeyringLocation": {
+                "default": "/var/liberty/sslkeyring",
+                "description": "liberty farm ssl Keyring Location",
+                "displayname": "sslKeyringLocation",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "sslStashfileLocation": {
+                "default": "/var/liberty/stashfile",
+                "description": "liberty farm ssl Stashfile Location",
+                "displayname": "sslStashfileLocation",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "webserverName": {
+                "default": "websrv",
+                "description": "https web server name",
+                "displayname": "webserverName",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "webserverPort": {
+                "default": "80",
+                "description": "http port of the web server",
+                "displayname": "webserverPort",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "webserverSecurePort": {
+                "default": "9043",
+                "description": "https port of the web server",
+                "displayname": "webserverSecurePort",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            },
+            "webserverhost": {
+                "default": "",
+                "description": "hostname/IP of the webserver",
+                "displayname": "webserverhost",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "selectable": "false",
+                "type": "string"
+            }
         },
         "features": {
             "embeddablecontainer": {
@@ -207,7 +383,7 @@
                     "default": "false",
                     "description": "liberty server01 jvm_params",
                     "displayname": "liberty_server01_jvm_params",
-                    "parm_type": "node",
+                    "parm_type": "none",
                     "precedence_level": "node",
                     "required": "recommended",
                     "type": "string"
@@ -234,7 +410,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "default": "srv01",
+                    "default": "defaultServer",
                     "description": "liberty server name",
                     "displayname": "liberty_server_name",
                     "parm_type": "node",
@@ -254,11 +430,11 @@
                     "type": "string"
                 },
                 "users": {
-                    "user01": {
+                    "admin_user": {
                         "name": {
-                            "default": "admin1",
-                            "description": "liberty server01 user01 name",
-                            "displayname": "liberty_server01_user01_name",
+                            "default": "admin",
+                            "description": "liberty server01 admin_user name",
+                            "displayname": "liberty_server01_admin_user_name",
                             "parm_type": "node",
                             "precedence_level": "node",
                             "required": "recommended",
@@ -267,8 +443,8 @@
                         },
                         "password": {
                             "default": "",
-                            "description": "liberty server01 user01 password",
-                            "displayname": "liberty_server01_user01_password",
+                            "description": "liberty server01 admin_user password",
+                            "displayname": "liberty_server01_admin_user_password",
                             "parm_type": "node",
                             "precedence_level": "node",
                             "required": "recommended",
@@ -278,41 +454,8 @@
                         },
                         "role": {
                             "default": "admin",
-                            "description": "liberty server01 user01 role",
-                            "displayname": "liberty_server01_user01_role",
-                            "parm_type": "node",
-                            "precedence_level": "node",
-                            "required": "recommended",
-                            "selectable": "false",
-                            "type": "string"
-                        }
-                    },
-                    "user02": {
-                        "name": {
-                            "default": "nonadmin1",
-                            "description": "liberty server01 user02 name",
-                            "displayname": "liberty_server01_user02_name",
-                            "parm_type": "node",
-                            "precedence_level": "node",
-                            "required": "recommended",
-                            "selectable": "false",
-                            "type": "string"
-                        },
-                        "password": {
-                            "default": "",
-                            "description": "liberty server01 user02 password",
-                            "displayname": "liberty_server01_user02_password",
-                            "parm_type": "node",
-                            "precedence_level": "node",
-                            "required": "recommended",
-                            "secret": "true",
-                            "selectable": "false",
-                            "type": "string"
-                        },
-                        "role": {
-                            "default": "nonadmin",
-                            "description": "liberty server01 user02 role",
-                            "displayname": "liberty_server01_user02_role",
+                            "description": "liberty server01 admin_user role",
+                            "displayname": "liberty_server01_admin_user_role",
                             "parm_type": "node",
                             "precedence_level": "node",
                             "required": "recommended",

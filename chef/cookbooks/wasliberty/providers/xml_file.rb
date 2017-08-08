@@ -28,7 +28,8 @@ action :add_element do
   #   => the same name
   #   => the same new_resource.content
   # as what we are looking for
-  last_found = nil
+  last_found = false
+  modified = false
   doc.elements.each(new_resource.search_path) do |elem|
     last_found = elem if elem.text == new_resource.content
     # go until the last one, of the possible several....
@@ -36,10 +37,15 @@ action :add_element do
 
   if last_found # if the element exists with the required content, enforce the attributes
     new_resource.node_attrs.each do |k, v|
-      last_found.add_attribute(k.to_s, v)
+      Chef::Log.info "Enforcing: #{k} => #{v}"
+      next if last_found.attributes.key?(k) && last_found.attributes[k].to_s == v.to_s
+      last_found.add_attribute(k.to_s, v.to_s)
+      Chef::Log.info "Added #{k} => #{v}"
+      modified = true
     end
   else # if element with the required content not found:
     # prepare the element to be added with the required content and new attributes
+    modified = true
     all_nodes = new_resource.search_path.split("/").reject(&:empty?)
     parent_nodes = all_nodes[0...-1]
     leaf = all_nodes[-1]
@@ -61,7 +67,12 @@ action :add_element do
     crt_node.add_element(new_elem)
   end
 
-  fdesc = ::File.open(new_resource.source, 'w')
-  doc.write(fdesc)
-  fdesc.close
+  if modified
+    fdesc = ::File.open(new_resource.source, 'w')
+    doc.write(fdesc)
+    fdesc.close
+    new_resource.updated_by_last_action(true)
+  else
+    new_resource.updated_by_last_action(false)
+  end
 end
