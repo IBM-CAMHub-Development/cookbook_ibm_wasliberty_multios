@@ -7,7 +7,7 @@ maintainer 'IBM Corp'
 maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2017'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.35'
+version '0.1.36'
 depends 'ibm_cloud_utils'
 depends 'im'
 description <<-EOF
