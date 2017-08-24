@@ -7,6 +7,7 @@ Installs/Configures WAS Liberty
 ### Platform
 * RHEL 6.6
 * RHEL 7.2
+* Ubuntu Server 14.04 or greater
 
 ## Versions
 WAS Liberty version 16.0.0.4

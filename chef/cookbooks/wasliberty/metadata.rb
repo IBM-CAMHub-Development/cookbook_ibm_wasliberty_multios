@@ -7,7 +7,7 @@ maintainer 'IBM Corp'
 maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2017'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.36'
+version '0.1.42'
 depends 'ibm_cloud_utils'
 depends 'im'
 description <<-EOF
@@ -17,6 +17,7 @@ Installs/Configures WAS Liberty
 ### Platform
 * RHEL 6.6
 * RHEL 7.2
+* Ubuntu Server 14.04 or greater
 
 ## Versions
 WAS Liberty version 16.0.0.4
