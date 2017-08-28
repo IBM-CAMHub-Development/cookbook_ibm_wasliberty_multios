@@ -30,6 +30,7 @@ default['was_liberty']['stop_servers'] = ''
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
+
 default['was_liberty']['start_servers'] = ''
 
 # <> Flag to remove installation archives after extraction
@@ -42,6 +43,7 @@ default['was_liberty']['start_servers'] = ''
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
+
 default['was_liberty']['cleanpackages'] = false
 
 # <> Temp directory to be used
@@ -111,35 +113,32 @@ default['was_liberty']['wlp_user_dir'] = "#{node['was_liberty']['install_dir']}/
 
 # <> IM install dir
 # <md> attribute 'was_liberty/im_install_dir',
-# <md>          :displayname => 'im_install_dir',
-# <md>          :description => 'IM install dir',
-
+# <md>          :displayname => 'Installation Manager installation directory',
+# <md>          :description => 'The installation root directory for the installation manager product binaries',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['im_install_dir'] = ''
 
 # <> Shared resources location of IBM Installation Manager
 # <md> attribute 'was_liberty/im_shared_dir',
-# <md>          :displayname => 'im_shared_dir',
-# <md>          :description => 'IM shared dir',
-
+# <md>          :displayname => 'Installation Manager shared resources directory',
+# <md>          :description => 'The shared resources directory is where installation artifacts are located that can be used by one or more package groups',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['im_shared_dir'] = "/opt/IBM/IMShared"
 
 # <> Create the OS users: 'true' or 'false'
 # <md> attribute 'was_liberty/create_os_users',
-# <md>          :displayname => 'create_os_users',
-# <md>          :description => 'Create the OS users: true or false',
-
+# <md>          :displayname => 'Create Liberty Installation userid',
+# <md>          :description => 'The userid that performs the installation of Liberty should be created',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
@@ -150,15 +149,17 @@ default['was_liberty']['create_os_users'] = 'true'
 
 # <> Liberty edition to be installed
 # <md> attribute 'was_liberty/edition',
-# <md>          :displayname => 'liberty_edition',
-# <md>          :description => 'Liberty edition to be installed',
-
+# <md>          :displayname => 'Liberty Edition to be installed',
+# <md>          :description => 'Indicates which Liberty offering should be installed. Valid values are: base, core, nd',
 # <md>          :type => 'string',
+# <md>          :choice => [ 'base',
+# <md>                       'core',
+# <md>                       'nd' ],
 # <md>          :required => 'recommended',
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none'
+# <md>          :parm_type => 'node'
 default['was_liberty']['edition'] = 'base'
 # NOTE: only one value can be set to true
 # <> WAS Liberty edition to install and configure
@@ -201,119 +202,119 @@ default['was_liberty']['features'] = {
 # NOTE: only one version should be set to true
 # <> Java oferings
 # <md> attribute 'was_liberty/sdk/common_ibm_sdk_v8/enable',
-# <md>          :displayname => 'common_ibm_sdk_v8_enable',
-# <md>          :description => 'flag for installing java common_ibm_sdk_v8',
-
+# <md>          :displayname => 'Install JDK 8 SDK',
+# <md>          :description => 'Indicates that Java 8 SDK version should be installed',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v8/offering_id',
-# <md>          :displayname => 'common_ibm_sdk_v8_offering_id',
-# <md>          :description => 'offering _id for java common_ibm_sdk_v8',
 
+# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v8/offering_id',
+# <md>          :displayname => 'Java 8 SDK installation manager offering id',
+# <md>          :description => 'Java SDK installation manager offering ID value',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.java.jdk.v8',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v8/feature',
-# <md>          :displayname => 'common_ibm_sdk_v8_feature',
-# <md>          :description => 'feature name for java common_ibm_sdk_v8',
 
+# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v8/feature',
+# <md>          :displayname => 'Java 8 SDK installation manager offering id',
+# <md>          :description => 'Java 8 SDK installation manager offering ID value',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.sdk.8',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/enable',
-# <md>          :displayname => 'common_ibm_sdk_v71_enable',
-# <md>          :description => 'flag for installing java common_ibm_sdk_v71',
 
+# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/enable',
+# <md>          :displayname => 'Install JDK 7.1 SDK',
+# <md>          :description => 'Indicates that Java 7.1 SDK version should be installed',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/offering_id',
-# <md>          :displayname => 'common_ibm_sdk_v71_offering_id',
-# <md>          :description => 'offering _id for java common_ibm_sdk_v71',
 
+# <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/offering_id',
+# <md>          :displayname => 'Java 7.1 SDK installation manager offering id',
+# <md>          :description => 'Java 7.1 SDK installation manager offering ID value',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.java.jdk.v71',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
+
 # <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/feature',
 # <md>          :displayname => 'common_ibm_sdk_v71_feature',
 # <md>          :description => 'feature name for java common_ibm_sdk_v71',
-
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.sdk.71',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/websphere_sdk_v80/enable',
-# <md>          :displayname => 'websphere_sdk_v80_enable',
-# <md>          :description => 'flag for installing java websphere_sdk_v80',
 
+# <md> attribute 'was_liberty/sdk/websphere_sdk_v80/enable',
+# <md>          :displayname => 'Install WebSphere JDK 8 SDK',
+# <md>          :description => 'Indicates that WebSphere Liberty Java 8 SDK version should be installed',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/websphere_sdk_v80/offering_id',
-# <md>          :displayname => 'websphere_sdk_v80_offering_id',
-# <md>          :description => 'offering _id for java websphere_sdk_v80',
 
+# <md> attribute 'was_liberty/sdk/websphere_sdk_v80/offering_id',
+# <md>          :displayname => 'WebSphere Liberty Java 8 SDK installation manager offering id',
+# <md>          :description => 'offering _id for java websphere_sdk_v80',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.websphere.liberty.IBMJAVA.v80',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
+
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v80/feature',
 # <md>          :displayname => 'websphere_sdk_v80_feature',
 # <md>          :description => 'feature name for java websphere_sdk_v80',
-
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.sdk.8',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/websphere_sdk_v70/enable',
-# <md>          :displayname => 'websphere_sdk_v70_enable',
-# <md>          :description => 'flag for installing java websphere_sdk_v70',
 
+
+# <md> attribute 'was_liberty/sdk/websphere_sdk_v70/enable',
+# <md>          :displayname => 'Install WebSphere Liberty Java 7.0 SDK ',
+# <md>          :description => 'Indicates that WebSphere Liberty Java 7.0 SDK version should be installed',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/sdk/websphere_sdk_v70/offering_id',
-# <md>          :displayname => 'websphere_sdk_v70_offering_id',
-# <md>          :description => 'offering _id for java websphere_sdk_v70',
 
+# <md> attribute 'was_liberty/sdk/websphere_sdk_v70/offering_id',
+# <md>          :displayname => 'WebSphere Liberty Java 7.0 SDK installation manager offering id',
+# <md>          :description => 'offering _id for java websphere_sdk_v70',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.websphere.liberty.IBMJAVA.v70',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
+
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v70/feature',
 # <md>          :displayname => 'websphere_sdk_v70_feature',
 # <md>          :description => 'feature name for java websphere_sdk_v70',
-
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'com.ibm.sdk.7',
@@ -337,26 +338,24 @@ default['was_liberty']['sdk'] = {
 
 # <> Liberty version to install
 # <md> attribute 'was_liberty/base_version',
-# <md>          :displayname => 'liberty version',
-# <md>          :description => 'liberty version',
-
+# <md>          :displayname => 'Liberty version',
+# <md>          :description => 'The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.0.2',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => '16.0.4',
-# <md>          :selectable => 'false',
+# <md>          :default => '17.0.2',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-default['was_liberty']['base_version'] = "16.0.4" # ~ip_checker
+default['was_liberty']['base_version'] = "17.0.2" # ~ip_checker
 
 # <> Java version to install
 # <md> attribute 'was_liberty/java_version',
-# <md>          :displayname => 'java version',
-# <md>          :description => 'java version',
-
+# <md>          :displayname => 'Java SDK version to be installed',
+# <md>          :description => 'The Java SDK version that should be installed with the WebSphere Application Server. Example format is 8.0.4.70',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '8.0',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['java_version'] = "8.0"
@@ -364,8 +363,7 @@ default['was_liberty']['java_version'] = "8.0"
 # <> Liberty fixpack to install
 # <md> attribute 'was_liberty/fixpack',
 # <md>          :displayname => 'liberty fixpack version',
-# <md>          :description => 'liberty fixpack version',
-
+# <md>          :description => 'The fixpack version of Liberty that should be isntalled' ,
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
@@ -431,107 +429,107 @@ default['was_liberty']['force_restart'] = true
 
 # <> Liberty servers parameters
 # <md> attribute 'was_liberty/liberty_servers/server01/name',
-# <md>          :description => 'liberty server name',
-# <md>          :displayname => 'liberty_server_name',
-
+# <md>          :description => 'Name of Liberty server to be created',
+# <md>          :displayname => 'Name of the initial Liberty server to be created during provisioning',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'defaultServer',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/jvm_params',
-# <md>          :description => 'liberty server01 jvm_params',
-# <md>          :displayname => 'liberty_server01_jvm_params',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/jvm_params',
+# <md>          :description => 'Liberty server JVM settings',
+# <md>          :displayname => 'Set the default JVM heap sizes for the liberty server',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '-Xms256m -Xmx2048m',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'none'
+
 # <md> attribute 'was_liberty/liberty_servers/server01/timeout',
 # <md>          :description => 'liberty server01 timeout',
 # <md>          :displayname => 'liberty_server01_timeout',
-
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '20',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/httpport',
-# <md>          :description => 'liberty server01 httpport',
-# <md>          :displayname => 'liberty_server01_httpport',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/httpport',
+# <md>          :description => 'Default HTTP Transport Port',
+# <md>          :displayname => 'HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '9080',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/httpsport',
-# <md>          :description => 'liberty server01 httpsport',
-# <md>          :displayname => 'liberty_server01_httpsport',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/httpsport',
+# <md>          :description => 'Secure Default HTTP Transport Port',
+# <md>          :displayname => 'Secure HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '9443',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/feature',
-# <md>          :description => 'liberty server01 feature',
-# <md>          :displayname => 'liberty_server01_feature',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/feature',
+# <md>          :description => 'Liberty features that should be included in the server definition',
+# <md>          :displayname => 'Lists the Liberty features that should be included in the feature manager list',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'webProfile-7.0 adminCenter-1.0',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/keystore_id',
-# <md>          :description => 'liberty server01 keystore_id',
-# <md>          :displayname => 'liberty_server01_keystore_id',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/keystore_id',
+# <md>          :description => 'Liberty keystore id" ,
+# <md>          :displayname => 'Keystore id that will be used when setting up the keyStore attribute in the server.xml',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'defaultKeyStore',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/keystore_password',
-# <md>          :description => 'liberty server01 keystore_password',
-# <md>          :displayname => 'liberty_server01_keystore_password',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/keystore_password',
+# <md>          :description => 'Liberty Keystore password',
+# <md>          :displayname => 'Liberty keystore password used to protect the Liberty keystore id',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
 # <md>          :secret => 'true'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/name',
-# <md>          :description => 'liberty server01 admin_user name',
-# <md>          :displayname => 'liberty_server01_admin_user_name',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/name',
+# <md>          :description => 'Liberty administrative user name',
+# <md>          :displayname => 'Administrative console username used for accessing the console',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'admin',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/password',
-# <md>          :description => 'liberty server01 admin_user password',
-# <md>          :displayname => 'liberty_server01_admin_user_password',
 
+# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/password',
+# <md>          :description => 'Liberty administrative user name password',
+# <md>          :displayname => 'Password for the Liberty administrative user name',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
 # <md>          :secret => 'true'
+
 # <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/role',
 # <md>          :description => 'liberty server01 admin_user role',
 # <md>          :displayname => 'liberty_server01_admin_user_role',
@@ -564,34 +562,34 @@ default['was_liberty']['liberty_servers'] = {
 
 # server farm configuration
 # <md> attribute 'was_liberty/farm/webserverhost',
-# <md>          :description => 'hostname/ip of the web server',
-# <md>          :displayname => 'webserverhost',
+# <md>          :description => 'IBM HTTP hostname',
+# <md>          :displayname => 'Fully qualified domain name of the IBM HTTP server',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['farm']['webserverhost'] = ''
 
 # <md> attribute 'was_liberty/farm/webserverPort',
-# <md>          :description => 'http port of the web server',
-# <md>          :displayname => 'webserverPort',
+# <md>          :description => 'IBM HTTP Web server port',
+# <md>          :displayname => 'HTTP Transport port that the webserver is listening on',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '80',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['farm']['webserverPort'] = '80'
 
 # <md> attribute 'was_liberty/farm/webserverSecurePort',
-# <md>          :description => 'https port of the web server',
-# <md>          :displayname => 'webserverSecurePort',
+# <md>          :description => 'IBM HTTP Secure web server port'',
+# <md>          :displayname => 'Secure HTTP transport',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '9043',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['farm']['webserverSecurePort'] = '9043'
@@ -602,7 +600,7 @@ default['was_liberty']['farm']['webserverSecurePort'] = '9043'
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'websrv',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['farm']['webserverName'] = 'websrv'
@@ -692,7 +690,7 @@ default['was_liberty']['farm']['pluginInstallRoot'] = "plugin_install_root"
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['farm']['central_node'] = ''
@@ -736,7 +734,7 @@ default['was_liberty']['farm']['plugin_cpy_user'] = node['was_liberty']['install
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['farm']['webserverhost'] = ''
@@ -763,3 +761,4 @@ default['ssh']['private_key']['path'] = '/root/.ssh/CAMkey.pem'
 # <md>          :parm_type => 'node'
 # <md>          :secret => 'true'
 default['ssh']['private_key']['content'] = ''
+

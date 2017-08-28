@@ -27,14 +27,14 @@
     },
     "was_liberty": {
         "base_version": {
-            "default": "16.0.4",
-            "description": "liberty version",
-            "displayname": "liberty version",
+            "default": "17.0.2",
+            "description": "The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.0.2",
+            "displayname": "Liberty version",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
-            "selectable": "false",
+            "selectable": "true",
             "type": "string"
         },
         "cleanpackages": {
@@ -50,8 +50,8 @@
         },
         "create_os_users": {
             "default": "",
-            "description": "Create the OS users: true or false",
-            "displayname": "create_os_users",
+            "description": "The userid that performs the installation of Liberty should be created",
+            "displayname": "Create Liberty Installation userid",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
@@ -60,11 +60,21 @@
             "type": "string"
         },
         "edition": {
+            "choice": [
+                "base",
+                "core",
+                "nd"
+            ],
             "default": "",
-            "description": "Liberty edition to be installed",
-            "displayname": "liberty_edition",
+            "description": "Indicates which Liberty offering should be installed. Valid values are: base, core, nd",
+            "displayname": "Liberty Edition to be installed",
             "hidden": "false",
-            "parm_type": "none",
+            "options": [
+                "base",
+                "core",
+                "nd"
+            ],
+            "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
             "selectable": "true",
@@ -79,7 +89,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "httpd_plugins_dir": {
@@ -200,30 +210,23 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "webserverPort": {
                 "default": "80",
-                "description": "http port of the web server",
-                "displayname": "webserverPort",
+                "description": "IBM HTTP Web server port",
+                "displayname": "HTTP Transport port that the webserver is listening on",
                 "hidden": "false",
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "webserverSecurePort": {
-                "default": "9043",
-                "description": "https port of the web server",
-                "displayname": "webserverSecurePort",
-                "hidden": "false",
-                "parm_type": "node",
-                "precedence_level": "node",
-                "required": "true",
-                "selectable": "false",
-                "type": "string"
+                "description": "IBM HTTP Secure web server port",
+                "hidden": "false"
             },
             "webserverhost": {
                 "default": "",
@@ -233,7 +236,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
@@ -263,7 +266,7 @@
         },
         "fixpack": {
             "default": "",
-            "description": "liberty fixpack version",
+            "description": "The fixpack version of Liberty that should be isntalled",
             "displayname": "liberty fixpack version",
             "hidden": "false",
             "parm_type": "node",
@@ -295,24 +298,24 @@
         },
         "im_install_dir": {
             "default": "",
-            "description": "IM install dir",
-            "displayname": "im_install_dir",
+            "description": "The installation root directory for the installation manager product binaries",
+            "displayname": "Installation Manager installation directory",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
-            "selectable": "false",
+            "selectable": "true",
             "type": "string"
         },
         "im_shared_dir": {
             "default": "",
-            "description": "IM shared dir",
-            "displayname": "im_shared_dir",
+            "description": "The shared resources directory is where installation artifacts are located that can be used by one or more package groups",
+            "displayname": "Installation Manager shared resources directory",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
-            "selectable": "false",
+            "selectable": "true",
             "type": "string"
         },
         "install_dir": {
@@ -372,54 +375,54 @@
         },
         "java_version": {
             "default": "8.0",
-            "description": "java version",
-            "displayname": "java version",
+            "description": "The Java SDK version that should be installed with the WebSphere Application Server. Example format is 8.0.4.70",
+            "displayname": "Java SDK version to be installed",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
-            "selectable": "false",
+            "selectable": "true",
             "type": "string"
         },
         "liberty_servers": {
             "server01": {
                 "feature": {
                     "default": "webProfile-7.0 adminCenter-1.0",
-                    "description": "liberty server01 feature",
-                    "displayname": "liberty_server01_feature",
+                    "description": "Liberty features that should be included in the server definition",
+                    "displayname": "Lists the Liberty features that should be included in the feature manager list",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "httpport": {
                     "default": "9080",
-                    "description": "liberty server01 httpport",
-                    "displayname": "liberty_server01_httpport",
+                    "description": "Default HTTP Transport Port",
+                    "displayname": "HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "httpsport": {
                     "default": "9443",
-                    "description": "liberty server01 httpsport",
-                    "displayname": "liberty_server01_httpsport",
+                    "description": "Secure Default HTTP Transport Port",
+                    "displayname": "Secure HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "jvm_params": {
-                    "default": "false",
-                    "description": "liberty server01 jvm_params",
-                    "displayname": "liberty_server01_jvm_params",
+                    "default": "true",
+                    "description": "Liberty server JVM settings",
+                    "displayname": "Set the default JVM heap sizes for the liberty server",
                     "hidden": "false",
                     "parm_type": "none",
                     "precedence_level": "node",
@@ -427,37 +430,30 @@
                     "type": "string"
                 },
                 "keystore_id": {
-                    "default": "defaultKeyStore",
-                    "description": "liberty server01 keystore_id",
-                    "displayname": "liberty_server01_keystore_id",
-                    "hidden": "false",
-                    "parm_type": "node",
-                    "precedence_level": "node",
-                    "required": "true",
-                    "selectable": "false",
-                    "type": "string"
+                    "description": "Liberty keystore id\" ,\n# <md>          :displayname => ",
+                    "hidden": "false"
                 },
                 "keystore_password": {
                     "default": "",
-                    "description": "liberty server01 keystore_password",
-                    "displayname": "liberty_server01_keystore_password",
+                    "description": "Liberty Keystore password",
+                    "displayname": "Liberty keystore password used to protect the Liberty keystore id",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "true",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "name": {
                     "default": "defaultServer",
-                    "description": "liberty server name",
-                    "displayname": "liberty_server_name",
+                    "description": "Name of Liberty server to be created",
+                    "displayname": "Name of the initial Liberty server to be created during provisioning",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "timeout": {
@@ -475,25 +471,25 @@
                     "admin_user": {
                         "name": {
                             "default": "admin",
-                            "description": "liberty server01 admin_user name",
-                            "displayname": "liberty_server01_admin_user_name",
+                            "description": "Liberty administrative user name",
+                            "displayname": "Administrative console username used for accessing the console",
                             "hidden": "false",
                             "parm_type": "node",
                             "precedence_level": "node",
                             "required": "true",
-                            "selectable": "false",
+                            "selectable": "true",
                             "type": "string"
                         },
                         "password": {
                             "default": "",
-                            "description": "liberty server01 admin_user password",
-                            "displayname": "liberty_server01_admin_user_password",
+                            "description": "Liberty administrative user name password",
+                            "displayname": "Password for the Liberty administrative user name",
                             "hidden": "false",
                             "parm_type": "node",
                             "precedence_level": "node",
                             "required": "true",
                             "secret": "true",
-                            "selectable": "false",
+                            "selectable": "true",
                             "type": "string"
                         },
                         "role": {
@@ -515,8 +511,8 @@
             "common_ibm_sdk_v71": {
                 "enable": {
                     "default": "false",
-                    "description": "flag for installing java common_ibm_sdk_v71",
-                    "displayname": "common_ibm_sdk_v71_enable",
+                    "description": "Indicates that Java 7.1 SDK version should be installed",
+                    "displayname": "Install JDK 7.1 SDK",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -537,8 +533,8 @@
                 },
                 "offering_id": {
                     "default": "com.ibm.java.jdk.v71",
-                    "description": "offering _id for java common_ibm_sdk_v71",
-                    "displayname": "common_ibm_sdk_v71_offering_id",
+                    "description": "Java 7.1 SDK installation manager offering ID value",
+                    "displayname": "Java 7.1 SDK installation manager offering id",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -550,8 +546,8 @@
             "common_ibm_sdk_v8": {
                 "enable": {
                     "default": "true",
-                    "description": "flag for installing java common_ibm_sdk_v8",
-                    "displayname": "common_ibm_sdk_v8_enable",
+                    "description": "Indicates that Java 8 SDK version should be installed",
+                    "displayname": "Install JDK 8 SDK",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -561,8 +557,8 @@
                 },
                 "feature": {
                     "default": "com.ibm.sdk.8",
-                    "description": "feature name for java common_ibm_sdk_v8",
-                    "displayname": "common_ibm_sdk_v8_feature",
+                    "description": "Java 8 SDK installation manager offering ID value",
+                    "displayname": "Java 8 SDK installation manager offering id",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -572,8 +568,8 @@
                 },
                 "offering_id": {
                     "default": "com.ibm.java.jdk.v8",
-                    "description": "offering _id for java common_ibm_sdk_v8",
-                    "displayname": "common_ibm_sdk_v8_offering_id",
+                    "description": "Java SDK installation manager offering ID value",
+                    "displayname": "Java 8 SDK installation manager offering id",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -585,8 +581,8 @@
             "websphere_sdk_v70": {
                 "enable": {
                     "default": "false",
-                    "description": "flag for installing java websphere_sdk_v70",
-                    "displayname": "websphere_sdk_v70_enable",
+                    "description": "Indicates that WebSphere Liberty Java 7.0 SDK version should be installed",
+                    "displayname": "Install WebSphere Liberty Java 7.0 SDK ",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -608,7 +604,7 @@
                 "offering_id": {
                     "default": "com.ibm.websphere.liberty.IBMJAVA.v70",
                     "description": "offering _id for java websphere_sdk_v70",
-                    "displayname": "websphere_sdk_v70_offering_id",
+                    "displayname": "WebSphere Liberty Java 7.0 SDK installation manager offering id",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -620,8 +616,8 @@
             "websphere_sdk_v80": {
                 "enable": {
                     "default": "false",
-                    "description": "flag for installing java websphere_sdk_v80",
-                    "displayname": "websphere_sdk_v80_enable",
+                    "description": "Indicates that WebSphere Liberty Java 8 SDK version should be installed",
+                    "displayname": "Install WebSphere JDK 8 SDK",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",
@@ -643,7 +639,7 @@
                 "offering_id": {
                     "default": "com.ibm.websphere.liberty.IBMJAVA.v80",
                     "description": "offering _id for java websphere_sdk_v80",
-                    "displayname": "websphere_sdk_v80_offering_id",
+                    "displayname": "WebSphere Liberty Java 8 SDK installation manager offering id",
                     "hidden": "false",
                     "parm_type": "node",
                     "precedence_level": "node",

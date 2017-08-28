@@ -55,8 +55,8 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['base_version']</code></td>
-    <td>liberty version</td>
-    <td><code>16.0.4</code></td>
+    <td>The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.0.2</td>
+    <td><code>17.0.2</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['cleanpackages']</code></td>
@@ -65,12 +65,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['create_os_users']</code></td>
-    <td>Create the OS users: true or false</td>
+    <td>The userid that performs the installation of Liberty should be created</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['edition']</code></td>
-    <td>Liberty edition to be installed</td>
+    <td>Indicates which Liberty offering should be installed. Valid values are: base, core, nd</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -135,13 +135,13 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverPort']</code></td>
-    <td>http port of the web server</td>
+    <td>IBM HTTP Web server port</td>
     <td><code>80</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverSecurePort']</code></td>
-    <td>https port of the web server</td>
-    <td><code>9043</code></td>
+    <td>IBM HTTP Secure web server port</td>
+    <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverhost']</code></td>
@@ -160,7 +160,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['fixpack']</code></td>
-    <td>liberty fixpack version</td>
+    <td>The fixpack version of Liberty that should be isntalled</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -175,12 +175,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['im_install_dir']</code></td>
-    <td>IM install dir</td>
+    <td>The installation root directory for the installation manager product binaries</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['im_shared_dir']</code></td>
-    <td>IM shared dir</td>
+    <td>The shared resources directory is where installation artifacts are located that can be used by one or more package groups</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -210,42 +210,43 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['java_version']</code></td>
-    <td>java version</td>
+    <td>The Java SDK version that should be installed with the WebSphere Application Server. Example format is 8.0.4.70</td>
     <td><code>8.0</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['feature']</code></td>
-    <td>liberty server01 feature</td>
+    <td>Liberty features that should be included in the server definition</td>
     <td><code>webProfile-7.0 adminCenter-1.0</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['httpport']</code></td>
-    <td>liberty server01 httpport</td>
+    <td>Default HTTP Transport Port</td>
     <td><code>9080</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['httpsport']</code></td>
-    <td>liberty server01 httpsport</td>
+    <td>Secure Default HTTP Transport Port</td>
     <td><code>9443</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['jvm_params']</code></td>
-    <td>liberty server01 jvm_params</td>
-    <td><code>false</code></td>
+    <td>Liberty server JVM settings</td>
+    <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['keystore_id']</code></td>
-    <td>liberty server01 keystore_id</td>
-    <td><code>defaultKeyStore</code></td>
+    <td>Liberty keystore id" ,
+# <md>          :displayname => </td>
+    <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['keystore_password']</code></td>
-    <td>liberty server01 keystore_password</td>
+    <td>Liberty Keystore password</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['name']</code></td>
-    <td>liberty server name</td>
+    <td>Name of Liberty server to be created</td>
     <td><code>defaultServer</code></td>
   </tr>
   <tr>
@@ -255,12 +256,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['name']</code></td>
-    <td>liberty server01 admin_user name</td>
+    <td>Liberty administrative user name</td>
     <td><code>admin</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['password']</code></td>
-    <td>liberty server01 admin_user password</td>
+    <td>Liberty administrative user name password</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -270,7 +271,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v71']['enable']</code></td>
-    <td>flag for installing java common_ibm_sdk_v71</td>
+    <td>Indicates that Java 7.1 SDK version should be installed</td>
     <td><code>false</code></td>
   </tr>
   <tr>
@@ -280,27 +281,27 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v71']['offering_id']</code></td>
-    <td>offering _id for java common_ibm_sdk_v71</td>
+    <td>Java 7.1 SDK installation manager offering ID value</td>
     <td><code>com.ibm.java.jdk.v71</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v8']['enable']</code></td>
-    <td>flag for installing java common_ibm_sdk_v8</td>
+    <td>Indicates that Java 8 SDK version should be installed</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v8']['feature']</code></td>
-    <td>feature name for java common_ibm_sdk_v8</td>
+    <td>Java 8 SDK installation manager offering ID value</td>
     <td><code>com.ibm.sdk.8</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v8']['offering_id']</code></td>
-    <td>offering _id for java common_ibm_sdk_v8</td>
+    <td>Java SDK installation manager offering ID value</td>
     <td><code>com.ibm.java.jdk.v8</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v70']['enable']</code></td>
-    <td>flag for installing java websphere_sdk_v70</td>
+    <td>Indicates that WebSphere Liberty Java 7.0 SDK version should be installed</td>
     <td><code>false</code></td>
   </tr>
   <tr>
@@ -315,7 +316,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v80']['enable']</code></td>
-    <td>flag for installing java websphere_sdk_v80</td>
+    <td>Indicates that WebSphere Liberty Java 8 SDK version should be installed</td>
     <td><code>false</code></td>
   </tr>
   <tr>

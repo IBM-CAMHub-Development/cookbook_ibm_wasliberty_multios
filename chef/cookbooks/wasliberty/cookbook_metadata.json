@@ -1,5 +1,5 @@
 {
-    "liberty ": {
+    "wasliberty": {
         "software": {
             "name": "IBM WebSphere Liberty",
             "major_version": [
@@ -36,7 +36,7 @@
             "Http port": "9080",
             "Https port": "9443"
         },
-        "offering_ids": {
+        "installation_files": {
             "16.0.4": {
                 "X86_64": {
                     "repo_root": "Installed from IM Repository",
