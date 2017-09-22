@@ -7,7 +7,7 @@ maintainer 'IBM Corp'
 maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2017'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.45'
+version '0.1.46'
 depends 'ibm_cloud_utils'
 depends 'im'
 description <<-EOF
@@ -360,12 +360,13 @@ attribute 'was_liberty/liberty_servers/server01/httpsport',
           :selectable => 'true',
           :type => 'string'
 attribute 'was_liberty/liberty_servers/server01/jvm_params',
-          :default => 'true',
+          :default => '-Xms256m -Xmx2048m',
           :description => 'Liberty server JVM settings',
           :displayname => 'Set the default JVM heap sizes for the liberty server',
           :parm_type => 'none',
           :precedence_level => 'node',
           :required => 'recommended',
+          :selectable => 'true',
           :type => 'string'
 attribute 'was_liberty/liberty_servers/server01/keystore_id',
           :description => 'Liberty keystore id" ,

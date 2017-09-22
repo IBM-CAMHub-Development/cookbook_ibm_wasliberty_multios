@@ -231,7 +231,7 @@ Attributes
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['jvm_params']</code></td>
     <td>Liberty server JVM settings</td>
-    <td><code>true</code></td>
+    <td><code>-Xms256m -Xmx2048m</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server01']['keystore_id']</code></td>

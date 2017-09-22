@@ -420,13 +420,14 @@
                     "type": "string"
                 },
                 "jvm_params": {
-                    "default": "true",
+                    "default": "-Xms256m -Xmx2048m",
                     "description": "Liberty server JVM settings",
                     "displayname": "Set the default JVM heap sizes for the liberty server",
                     "hidden": "false",
                     "parm_type": "none",
                     "precedence_level": "node",
                     "required": "true",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "keystore_id": {
