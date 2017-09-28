@@ -55,7 +55,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['base_version']</code></td>
-    <td>The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.0.2</td>
+    <td>The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.2</td>
     <td><code>17.0.2</code></td>
   </tr>
   <tr>
@@ -185,7 +185,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_dir']</code></td>
-    <td>Liberty install dir</td>
+    <td>Liberty installation directory</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -205,7 +205,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_user']</code></td>
-    <td>Liberty install user</td>
+    <td>Liberty installation user</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -214,59 +214,58 @@ Attributes
     <td><code>8.0</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['feature']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['feature']</code></td>
     <td>Liberty features that should be included in the server definition</td>
     <td><code>webProfile-7.0 adminCenter-1.0</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['httpport']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['httpport']</code></td>
     <td>Default HTTP Transport Port</td>
     <td><code>9080</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['httpsport']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['httpsport']</code></td>
     <td>Secure Default HTTP Transport Port</td>
     <td><code>9443</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['jvm_params']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['jvm_params']</code></td>
     <td>Liberty server JVM settings</td>
     <td><code>-Xms256m -Xmx2048m</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['keystore_id']</code></td>
-    <td>Liberty keystore id" ,
-# <md>          :displayname => </td>
-    <td><code></code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['keystore_id']</code></td>
+    <td>Liberty keystore id</td>
+    <td><code>defaultKeyStore</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['keystore_password']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['keystore_password']</code></td>
     <td>Liberty Keystore password</td>
     <td><code></code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['name']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['name']</code></td>
     <td>Name of Liberty server to be created</td>
     <td><code>defaultServer</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['timeout']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['timeout']</code></td>
     <td>liberty server01 timeout</td>
     <td><code>20</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['name']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['users']['admin_user']['name']</code></td>
     <td>Liberty administrative user name</td>
     <td><code>admin</code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['password']</code></td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['users']['admin_user']['password']</code></td>
     <td>Liberty administrative user name password</td>
     <td><code></code></td>
   </tr>
   <tr>
-    <td><code>node['was_liberty']['liberty_servers']['server01']['users']['admin_user']['role']</code></td>
-    <td>liberty server01 admin_user role</td>
+    <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['users']['admin_user']['role']</code></td>
+    <td>liberty admin_user role</td>
     <td><code>admin</code></td>
   </tr>
   <tr>

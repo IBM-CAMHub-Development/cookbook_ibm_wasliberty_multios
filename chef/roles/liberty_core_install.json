@@ -1,6 +1,6 @@
 {
     "name":"liberty_core_install",
-    "description":"installs WAS Liberty Core",
+    "description":"Installs WAS Liberty Core",
     "json_class":"Chef::Role",
     "chef_type":"role",
     "default_attributes":{

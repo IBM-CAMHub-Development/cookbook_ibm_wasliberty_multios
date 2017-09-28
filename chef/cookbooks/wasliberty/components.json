@@ -21,7 +21,7 @@
             }
         },
         "depends_on": [],
-        "description": "installs WAS Liberty Core",
+        "description": "Installs WAS Liberty Core",
         "displayname": "liberty_core_install",
         "name": "liberty_core_install",
         "objectname": "liberty_core_install",
@@ -34,11 +34,21 @@
         "type": "chef_role"
     },
     {
+        "$dynamicmaps": {
+            "was_liberty": {
+                "liberty_servers": {
+                    "$count": "0",
+                    "$displayname": "IBM Liberty Servers",
+                    "$key": "server",
+                    "$max": "4"
+                }
+            }
+        },
         "attributes": {
             "was_liberty": {
                 "install_dir": "/opt/IBM/WebSphere/Liberty",
                 "liberty_servers": {
-                    "server01": {
+                    "server($INDEX)": {
                         "feature": "webProfile-7.0 adminCenter-1.0",
                         "httpport": "9080",
                         "httpsport": "9443",

@@ -16,7 +16,10 @@
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['stop_servers'] = ''
 
 # <> List of servers to be started
@@ -29,7 +32,10 @@ default['was_liberty']['stop_servers'] = ''
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 
 default['was_liberty']['start_servers'] = ''
 
@@ -42,7 +48,10 @@ default['was_liberty']['start_servers'] = ''
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 
 default['was_liberty']['cleanpackages'] = false
 
@@ -56,20 +65,25 @@ default['was_liberty']['cleanpackages'] = false
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['tmp'] = node['ibm']['temp_dir'] + "/was_liberty"
 
 # <> Liberty install user
 # <md> attribute 'was_liberty/install_user',
 # <md>          :displayname => 'install_user',
-# <md>          :description => 'Liberty install user',
-
+# <md>          :description => 'Liberty installation user',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['install_user'] = ''
 
 # <> Liberty install group
@@ -82,33 +96,40 @@ default['was_liberty']['install_user'] = ''
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['install_grp'] = ''
 
 # <> Liberty install dir
 # <md> attribute 'was_liberty/install_dir',
 # <md>          :displayname => 'install_dir',
-# <md>          :description => 'Liberty install dir',
-
+# <md>          :description => 'Liberty installation directory',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
-# <md>          :selectable => 'false',
+# <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['install_dir'] = ''
 
 # <> Liberty user dir
 # <md> attribute 'was_liberty/wlp_user_dir',
 # <md>          :displayname => 'wlp_user_dir',
 # <md>          :description => 'Liberty directory for user data',
-
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['wlp_user_dir'] = "#{node['was_liberty']['install_dir']}/usr"
 
 # <> IM install dir
@@ -120,7 +141,10 @@ default['was_liberty']['wlp_user_dir'] = "#{node['was_liberty']['install_dir']}/
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['im_install_dir'] = ''
 
 # <> Shared resources location of IBM Installation Manager
@@ -132,7 +156,10 @@ default['was_liberty']['im_install_dir'] = ''
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['im_shared_dir'] = "/opt/IBM/IMShared"
 
 # <> Create the OS users: 'true' or 'false'
@@ -144,7 +171,10 @@ default['was_liberty']['im_shared_dir'] = "/opt/IBM/IMShared"
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['create_os_users'] = 'true'
 
 # <> Liberty edition to be installed
@@ -159,7 +189,10 @@ default['was_liberty']['create_os_users'] = 'true'
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['edition'] = 'base'
 # NOTE: only one value can be set to true
 # <> WAS Liberty edition to install and configure
@@ -168,7 +201,6 @@ default['was_liberty']['edition'] = 'base'
 #   'nd'      => "true",
 #   'core'    => "false"
 # }
-
 # <> Liberty features to install
 # <md> attribute 'was_liberty/features/embeddablecontainer',
 # <md>          :displayname => 'embeddablecontainer_feature',
@@ -179,11 +211,13 @@ default['was_liberty']['edition'] = 'base'
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 # <md> attribute 'was_liberty/features/liberty',
 # <md>          :displayname => 'liberty_feature',
 # <md>          :description => 'liberty feature',
-
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'true',
@@ -209,7 +243,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/common_ibm_sdk_v8/offering_id',
 # <md>          :displayname => 'Java 8 SDK installation manager offering id',
@@ -219,7 +255,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.java.jdk.v8',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/common_ibm_sdk_v8/feature',
 # <md>          :displayname => 'Java 8 SDK installation manager offering id',
@@ -229,7 +267,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.sdk.8',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/enable',
 # <md>          :displayname => 'Install JDK 7.1 SDK',
@@ -239,7 +279,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/offering_id',
 # <md>          :displayname => 'Java 7.1 SDK installation manager offering id',
@@ -249,7 +291,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.java.jdk.v71',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/common_ibm_sdk_v71/feature',
 # <md>          :displayname => 'common_ibm_sdk_v71_feature',
@@ -259,7 +303,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.sdk.71',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v80/enable',
 # <md>          :displayname => 'Install WebSphere JDK 8 SDK',
@@ -269,7 +315,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v80/offering_id',
 # <md>          :displayname => 'WebSphere Liberty Java 8 SDK installation manager offering id',
@@ -279,7 +327,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.websphere.liberty.IBMJAVA.v80',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v80/feature',
 # <md>          :displayname => 'websphere_sdk_v80_feature',
@@ -289,7 +339,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.sdk.8',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v70/enable',
@@ -300,7 +352,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v70/offering_id',
 # <md>          :displayname => 'WebSphere Liberty Java 7.0 SDK installation manager offering id',
@@ -310,7 +364,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.websphere.liberty.IBMJAVA.v70',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 # <md> attribute 'was_liberty/sdk/websphere_sdk_v70/feature',
 # <md>          :displayname => 'websphere_sdk_v70_feature',
@@ -320,7 +376,9 @@ default['was_liberty']['features'] = {
 # <md>          :default => 'com.ibm.sdk.7',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 default['was_liberty']['sdk'] = {
   'common_ibm_sdk_v8'  => { 'enable' => "true",
                             'offering_id' => "com.ibm.java.jdk.v8",
@@ -339,13 +397,15 @@ default['was_liberty']['sdk'] = {
 # <> Liberty version to install
 # <md> attribute 'was_liberty/base_version',
 # <md>          :displayname => 'Liberty version',
-# <md>          :description => 'The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.0.2',
+# <md>          :description => 'The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.2',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '17.0.2',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 default['was_liberty']['base_version'] = "17.0.2" # ~ip_checker
 
 # <> Java version to install
@@ -357,7 +417,9 @@ default['was_liberty']['base_version'] = "17.0.2" # ~ip_checker
 # <md>          :default => '8.0',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 default['was_liberty']['java_version'] = "8.0"
 
 # <> Liberty fixpack to install
@@ -369,20 +431,24 @@ default['was_liberty']['java_version'] = "8.0"
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 default['was_liberty']['fixpack'] = "" # ~ip_checker
 
 # <> if true, IBM Java will be installed from archives
 # <md> attribute 'was_liberty/install_java',
 # <md>          :description => 'install_java_flag',
 # <md>          :displayname => 'install_java flag',
-
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['install_java'] = "true"
 
 # <> Java fixpack to install
@@ -395,9 +461,11 @@ default['was_liberty']['install_java'] = "true"
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
-default['was_liberty']['fixpack_java'] = "" # ~ip_checker
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
+default['was_liberty']['fixpack_java'] = "" # ~ip_checker
 # <> if true, IBM Java fp will be installed
 # <md> attribute 'was_liberty/install_javafp',
 # <md>          :description => 'install_javafp_flag',
@@ -408,7 +476,10 @@ default['was_liberty']['fixpack_java'] = "" # ~ip_checker
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['install_javafp'] = "true"
 
 #################################
@@ -424,11 +495,20 @@ default['was_liberty']['install_javafp'] = "true"
 # <md>          :default => true,
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['force_restart'] = true
 
+# <md>attribute '$dynamicmaps/was_liberty/liberty_servers',
+# <md>          :$displayname =>  'IBM Liberty Servers',
+# <md>          :$key => 'server',
+# <md>          :$max => '4',
+# <md>          :$count => '0'
+
 # <> Liberty servers parameters
-# <md> attribute 'was_liberty/liberty_servers/server01/name',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/name',
 # <md>          :description => 'Name of Liberty server to be created',
 # <md>          :displayname => 'Name of the initial Liberty server to be created during provisioning',
 # <md>          :type => 'string',
@@ -436,9 +516,11 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => 'defaultServer',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/jvm_params',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/jvm_params',
 # <md>          :description => 'Liberty server JVM settings',
 # <md>          :displayname => 'Set the default JVM heap sizes for the liberty server',
 # <md>          :type => 'string',
@@ -446,9 +528,11 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => '-Xms256m -Xmx2048m',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none'
+# <md>          :parm_type => 'none',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/timeout',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/timeout',
 # <md>          :description => 'liberty server01 timeout',
 # <md>          :displayname => 'liberty_server01_timeout',
 # <md>          :type => 'string',
@@ -456,9 +540,11 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => '20',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/httpport',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/httpport',
 # <md>          :description => 'Default HTTP Transport Port',
 # <md>          :displayname => 'HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml',
 # <md>          :type => 'string',
@@ -466,9 +552,11 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => '9080',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/httpsport',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/httpsport',
 # <md>          :description => 'Secure Default HTTP Transport Port',
 # <md>          :displayname => 'Secure HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml',
 # <md>          :type => 'string',
@@ -476,9 +564,11 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => '9443',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/feature',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/feature',
 # <md>          :description => 'Liberty features that should be included in the server definition',
 # <md>          :displayname => 'Lists the Liberty features that should be included in the feature manager list',
 # <md>          :type => 'string',
@@ -486,30 +576,38 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => 'webProfile-7.0 adminCenter-1.0',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/keystore_id',
-# <md>          :description => 'Liberty keystore id" ,
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/keystore_id',
+# <md>          :description => 'Liberty keystore id',
 # <md>          :displayname => 'Keystore id that will be used when setting up the keyStore attribute in the server.xml',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'defaultKeyStore',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/keystore_password',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/keystore_password',
 # <md>          :description => 'Liberty Keystore password',
 # <md>          :displayname => 'Liberty keystore password used to protect the Liberty keystore id',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :regex => '^[!-~]{8,32}$',
+# <md>          :regexdesc => 'Allow 8 to 32 printable ASCII characters except space.',
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
+# <md>          :secret => 'true',
+# <md>          :hidden => 'true',
 # <md>          :secret => 'true'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/name',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/users/admin_user/name',
 # <md>          :description => 'Liberty administrative user name',
 # <md>          :displayname => 'Administrative console username used for accessing the console',
 # <md>          :type => 'string',
@@ -517,47 +615,53 @@ default['was_liberty']['force_restart'] = true
 # <md>          :default => 'admin',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/password',
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/users/admin_user/password',
 # <md>          :description => 'Liberty administrative user name password',
 # <md>          :displayname => 'Password for the Liberty administrative user name',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :regex => '^[!-~]{8,32}$',
+# <md>          :regexdesc => 'Allow 8 to 32 printable ASCII characters except space.',
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
-# <md>          :secret => 'true'
+# <md>          :secret => 'true',
+# <md>          :hidden => 'false'
 
-# <md> attribute 'was_liberty/liberty_servers/server01/users/admin_user/role',
-# <md>          :description => 'liberty server01 admin_user role',
-# <md>          :displayname => 'liberty_server01_admin_user_role',
-
+# <md> attribute 'was_liberty/liberty_servers/server($INDEX)/users/admin_user/role',
+# <md>          :description => 'liberty admin_user role',
+# <md>          :displayname => 'liberty_admin_user_role',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'admin',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
 
 default['was_liberty']['liberty_servers'] = {
-  'server01' => { 'name' => "defaultServer",
-                  'jvm_params' => "-Xms256m -Xmx2048m",
-                  'timeout' => "20",
-                  'httpport' => "9080",
-                  'httpsport' => "9443",
-                  'feature' => "webProfile-7.0 adminCenter-1.0",
-                  'keystore_id' => "defaultKeyStore",
-                  'keystore_password' => "",
-                  'users' => {
-                    'admin_user' => {
-                      'name' => "admin",
-                      'password' => "",
-                      'role' => "admin"
-                    }
-                  }
-                }
+  'server1' => { 'name' => "defaultServer",
+                 'jvm_params' => "-Xms256m -Xmx2048m",
+                 'timeout' => "20",
+                 'httpport' => "9080",
+                 'httpsport' => "9443",
+                 'feature' => "webProfile-7.0 adminCenter-1.0",
+                 'keystore_id' => "defaultKeyStore",
+                 'keystore_password' => "",
+                 'users' => {
+                   'admin_user' => {
+                     'name' => "admin",
+                     'password' => "",
+                     'role' => "admin"
+                   }
+                 }
+  }
 }
 
 # server farm configuration
@@ -569,7 +673,10 @@ default['was_liberty']['liberty_servers'] = {
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['webserverhost'] = ''
 
 # <md> attribute 'was_liberty/farm/webserverPort',
@@ -580,7 +687,10 @@ default['was_liberty']['farm']['webserverhost'] = ''
 # <md>          :default => '80',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['webserverPort'] = '80'
 
 # <md> attribute 'was_liberty/farm/webserverSecurePort',
@@ -591,7 +701,10 @@ default['was_liberty']['farm']['webserverPort'] = '80'
 # <md>          :default => '9043',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['webserverSecurePort'] = '9043'
 
 # <md> attribute 'was_liberty/farm/webserverName',
@@ -602,7 +715,10 @@ default['was_liberty']['farm']['webserverSecurePort'] = '9043'
 # <md>          :default => 'websrv',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['webserverName'] = 'websrv'
 
 # <md> attribute 'was_liberty/farm/httpd_plugins_dir',
@@ -613,7 +729,10 @@ default['was_liberty']['farm']['webserverName'] = 'websrv'
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['httpd_plugins_dir'] = ''
 
 # <md> attribute 'was_liberty/farm/httpd_user',
@@ -624,7 +743,10 @@ default['was_liberty']['farm']['httpd_plugins_dir'] = ''
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['httpd_user'] = ''
 
 # <md> attribute 'was_liberty/farm/sslKeyringLocation',
@@ -635,7 +757,10 @@ default['was_liberty']['farm']['httpd_user'] = ''
 # <md>          :default => '/var/liberty/sslkeyring',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['sslKeyringLocation'] = '/var/liberty/sslkeyring'
 
 # <md> attribute 'was_liberty/farm/sslStashfileLocation',
@@ -646,7 +771,10 @@ default['was_liberty']['farm']['sslKeyringLocation'] = '/var/liberty/sslkeyring'
 # <md>          :default => '/var/liberty/stashfile',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['sslStashfileLocation'] = '/var/liberty/stashfile'
 
 # <md> attribute 'was_liberty/farm/sslCertlabel',
@@ -657,7 +785,10 @@ default['was_liberty']['farm']['sslStashfileLocation'] = '/var/liberty/stashfile
 # <md>          :default => 'definedbyuser',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['sslCertlabel'] = 'definedbyuser'
 
 # <md> attribute 'was_liberty/farm/logFileName',
@@ -668,7 +799,10 @@ default['was_liberty']['farm']['sslCertlabel'] = 'definedbyuser'
 # <md>          :default => 'serverfarm.log',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['logFileName'] = "serverfarm.log"
 
 # <md> attribute 'was_liberty/farm/pluginInstallRoot',
@@ -679,7 +813,10 @@ default['was_liberty']['farm']['logFileName'] = "serverfarm.log"
 # <md>          :default => 'plugin_install_root',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['pluginInstallRoot'] = "plugin_install_root"
 
 
@@ -692,7 +829,10 @@ default['was_liberty']['farm']['pluginInstallRoot'] = "plugin_install_root"
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['central_node'] = ''
 
 # <md> attribute 'was_liberty/farm/plugins_dir',
@@ -703,7 +843,10 @@ default['was_liberty']['farm']['central_node'] = ''
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['plugins_dir'] = "#{node['was_liberty']['wlp_user_dir']}/tmp"
 
 # <md> attribute 'was_liberty/farm/mergedplugins_dir',
@@ -714,7 +857,10 @@ default['was_liberty']['farm']['plugins_dir'] = "#{node['was_liberty']['wlp_user
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['mergedplugins_dir'] = "#{node['was_liberty']['farm']['plugins_dir']}/merged"
 
 # <md> attribute 'was_liberty/farm/plugin_cpy_user',
@@ -725,7 +871,10 @@ default['was_liberty']['farm']['mergedplugins_dir'] = "#{node['was_liberty']['fa
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['plugin_cpy_user'] = node['was_liberty']['install_user']
 
 # <md> attribute 'was_liberty/farm/webserverhost',
@@ -736,7 +885,10 @@ default['was_liberty']['farm']['plugin_cpy_user'] = node['was_liberty']['install
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['was_liberty']['farm']['webserverhost'] = ''
 
 # <md> attribute 'ssh/private_key/path',
@@ -747,7 +899,10 @@ default['was_liberty']['farm']['webserverhost'] = ''
 # <md>          :default => '',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node'
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['ssh']['private_key']['path'] = '/root/.ssh/CAMkey.pem'
 
 # <md> attribute 'ssh/private_key/content',
@@ -759,6 +914,9 @@ default['ssh']['private_key']['path'] = '/root/.ssh/CAMkey.pem'
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
-# <md>          :secret => 'true'
+# <md>          :secret => 'true',
+# <md>          :hidden => 'false',
+# <md>          :secret => 'false'
+
 default['ssh']['private_key']['content'] = ''
 

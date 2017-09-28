@@ -38,6 +38,9 @@ default['ibm']['sw_repo_user'] = 'repouser'
 # <> repo pass
 default['ibm']['sw_repo_password'] = ''
 
+default['was_liberty']['skip_indexes'] = 'true'
+
+
 #-------------------------------------------------------------------------------
 # Landscaper compatibility attributes
 #-------------------------------------------------------------------------------

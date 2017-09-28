@@ -17,6 +17,7 @@ Chef::Log.info("Start executing recipe: config_srv.rb")
 node['was_liberty']['liberty_servers'].each do |srv_index, v|
   server_name = v['name']
   srv_feature_list = v['feature'].split(/[\s,]+/)
+  next if srv_index['$INDEX'] && node['was_liberty']['skip_indexes'] == 'true'
   Chef::Log.info("feature list: #{srv_feature_list}")
   # 'users' => {
   #   'admin01': {

@@ -7,7 +7,7 @@
       "was_liberty" : {
         "install_dir" : "/opt/IBM/WebSphere/Liberty",
         "liberty_servers": {
-          "server01" : {
+          "server($INDEX)" : {
             "name" : "defaultServer",
             "jvm_params" : "-Xms256m -Xmx2048m",
             "httpport" : "9080",

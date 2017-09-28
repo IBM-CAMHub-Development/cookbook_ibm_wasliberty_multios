@@ -20,6 +20,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             }
@@ -28,12 +29,13 @@
     "was_liberty": {
         "base_version": {
             "default": "17.0.2",
-            "description": "The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.0.2",
+            "description": "The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.2",
             "displayname": "Liberty version",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
@@ -45,6 +47,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -56,6 +59,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
@@ -77,6 +81,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
@@ -89,6 +94,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "true",
                 "type": "string"
             },
@@ -100,6 +106,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -111,6 +118,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -122,6 +130,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -133,6 +142,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -144,6 +154,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -155,6 +166,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -166,6 +178,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -177,6 +190,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -188,6 +202,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -199,6 +214,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "false",
                 "type": "string"
             },
@@ -210,6 +226,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "true",
                 "type": "string"
             },
@@ -221,6 +238,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "true",
                 "type": "string"
             },
@@ -236,6 +254,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "true",
                 "type": "string"
             }
@@ -249,6 +268,7 @@
                 "parm_type": "node",
                 "precedence_level": "node",
                 "required": "true",
+                "secret": "false",
                 "selectable": "true",
                 "type": "string"
             },
@@ -272,6 +292,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -283,6 +304,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -294,6 +316,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "type": "string"
         },
         "im_install_dir": {
@@ -304,6 +327,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
@@ -315,18 +339,20 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
         "install_dir": {
             "default": "",
-            "description": "Liberty install dir",
+            "description": "Liberty installation directory",
             "displayname": "install_dir",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
-            "selectable": "false",
+            "secret": "false",
+            "selectable": "true",
             "type": "string"
         },
         "install_grp": {
@@ -337,6 +363,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -348,6 +375,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
@@ -359,17 +387,19 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
         "install_user": {
             "default": "",
-            "description": "Liberty install user",
+            "description": "Liberty installation user",
             "displayname": "install_user",
             "hidden": "false",
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -381,11 +411,12 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "true",
             "type": "string"
         },
         "liberty_servers": {
-            "server01": {
+            "server($INDEX)": {
                 "feature": {
                     "default": "webProfile-7.0 adminCenter-1.0",
                     "description": "Liberty features that should be included in the server definition",
@@ -394,6 +425,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -405,6 +437,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -416,6 +449,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -427,20 +461,31 @@
                     "parm_type": "none",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
                 "keystore_id": {
-                    "description": "Liberty keystore id\" ,\n# <md>          :displayname => ",
-                    "hidden": "false"
+                    "default": "defaultKeyStore",
+                    "description": "Liberty keystore id",
+                    "displayname": "Keystore id that will be used when setting up the keyStore attribute in the server.xml",
+                    "hidden": "false",
+                    "parm_type": "node",
+                    "precedence_level": "node",
+                    "required": "true",
+                    "secret": "false",
+                    "selectable": "true",
+                    "type": "string"
                 },
                 "keystore_password": {
                     "default": "",
                     "description": "Liberty Keystore password",
                     "displayname": "Liberty keystore password used to protect the Liberty keystore id",
-                    "hidden": "false",
+                    "hidden": "true",
                     "parm_type": "node",
                     "precedence_level": "node",
+                    "regex": "^[!-~]{8,32}$",
+                    "regexdesc": "Allow 8 to 32 printable ASCII characters except space.",
                     "required": "true",
                     "secret": "true",
                     "selectable": "true",
@@ -454,6 +499,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -465,6 +511,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 },
@@ -478,6 +525,7 @@
                             "parm_type": "node",
                             "precedence_level": "node",
                             "required": "true",
+                            "secret": "false",
                             "selectable": "true",
                             "type": "string"
                         },
@@ -488,6 +536,8 @@
                             "hidden": "false",
                             "parm_type": "node",
                             "precedence_level": "node",
+                            "regex": "^[!-~]{8,32}$",
+                            "regexdesc": "Allow 8 to 32 printable ASCII characters except space.",
                             "required": "true",
                             "secret": "true",
                             "selectable": "true",
@@ -495,12 +545,13 @@
                         },
                         "role": {
                             "default": "admin",
-                            "description": "liberty server01 admin_user role",
-                            "displayname": "liberty_server01_admin_user_role",
+                            "description": "liberty admin_user role",
+                            "displayname": "liberty_admin_user_role",
                             "hidden": "false",
                             "parm_type": "node",
                             "precedence_level": "node",
                             "required": "true",
+                            "secret": "false",
                             "selectable": "false",
                             "type": "string"
                         }
@@ -518,6 +569,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -529,6 +581,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 },
@@ -540,6 +593,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 }
@@ -553,6 +607,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -564,6 +619,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 },
@@ -575,6 +631,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 }
@@ -588,6 +645,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -599,6 +657,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 },
@@ -610,6 +669,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 }
@@ -623,6 +683,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "true",
                     "type": "string"
                 },
@@ -634,6 +695,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 },
@@ -645,6 +707,7 @@
                     "parm_type": "node",
                     "precedence_level": "node",
                     "required": "true",
+                    "secret": "false",
                     "selectable": "false",
                     "type": "string"
                 }
@@ -658,6 +721,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -669,6 +733,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -680,6 +745,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         },
@@ -691,6 +757,7 @@
             "parm_type": "node",
             "precedence_level": "node",
             "required": "true",
+            "secret": "false",
             "selectable": "false",
             "type": "string"
         }
