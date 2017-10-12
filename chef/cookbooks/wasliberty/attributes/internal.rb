@@ -138,7 +138,7 @@ else
     }
   }
   # <> Installation location of IBM Installation Manager
-  default['was_liberty']['im_install_dir'] = node['was_liberty']['os_users']['wasadmin']['home'] + '/opt/IBM/InstallationManager_Group'
+  default['was_liberty']['im_install_dir'] = node['was_liberty']['os_users']['wasadmin']['home'] + '/InstallationManager'
   # <> WAS installation directory
   default['was_liberty']['install_dir'] = node['was_liberty']['os_users']['wasadmin']['home'] + '/opt/IBM/WebSphere/Liberty'
 end

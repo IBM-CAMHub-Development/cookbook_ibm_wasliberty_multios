@@ -17,7 +17,6 @@
         "install_user": "root",
         "install_grp": "root",
         "install_dir" : "/opt/IBM/WebSphere/Liberty",
-        "im_install_dir" : "/opt/IBM/InstallationManager",
         "java_version" : "8.0",
         "base_version" : "17.0.2",
         "wlp_user_dir": "/opt/IBM/WebSphere/Liberty/usr"

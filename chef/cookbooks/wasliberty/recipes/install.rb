@@ -16,6 +16,14 @@ liberty_edition = Helpers.liberty_edition(node)
 _, sdk_offering_id, sdk_features = Helpers.sdk_edition(node)
 feature_list = Helpers.liberty_features(node)
 
+# Create targetPath directory
+directory node['was_liberty']['install_dir'] do
+  action :create
+  recursive true
+  owner node['was_liberty']['install_user']
+  group node['was_liberty']['install_grp']
+end
+
 im_install "com.ibm.websphere.liberty.CORE" do
   action [:install_im, :install]
   repositories node['ibm']['im_repo']
@@ -38,6 +46,15 @@ im_install "com.ibm.websphere.liberty.CORE" do
   repo_nonsecureMode 'true'
   not_if { File.exist?("#{node['was_liberty']['install_dir']}/bin/server") }
 end
+
+# Create User Data Directory
+directory node['was_liberty']['wlp_user_dir'] do
+  action :create
+  recursive true
+  owner node['was_liberty']['install_user']
+  group node['was_liberty']['install_grp']
+end
+
 
 java_home = if File.directory?("#{node['was_liberty']['install_dir']}/java/#{node['was_liberty']['java_version'][0..2]}")
               "#{node['was_liberty']['install_dir']}/java/#{node['was_liberty']['java_version'][0..2]}"

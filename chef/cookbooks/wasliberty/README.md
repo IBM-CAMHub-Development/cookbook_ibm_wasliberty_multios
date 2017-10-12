@@ -45,12 +45,13 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ssh']['private_key']['content']</code></td>
-    <td>the content of the private ssh key</td>
+    <td>Liberty private key,
+# <md>          :displayname => </td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ssh']['private_key']['path']</code></td>
-    <td>the path where the private ssh key will be stored</td>
+    <td>Liberty private key path</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -60,7 +61,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['cleanpackages']</code></td>
-    <td>Flag to remove installation archives after extraction</td>
+    <td>A flag to indicate whether installation packages are to be cleaned after a successful installation</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -75,17 +76,17 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['central_node']</code></td>
-    <td>hotname/IP of the liberty node which will gather and merge the plugins. Leave empty when deploying the central node itself</td>
+    <td>Liberty farm central node</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['httpd_plugins_dir']</code></td>
-    <td>the directory on the web server where the merged plugin will be pushed</td>
+    <td>Liberty http plugins dir</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['httpd_user']</code></td>
-    <td>the user for pushing the merged plugin file to the web server host</td>
+    <td>Liberty farm http user</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -95,88 +96,83 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['mergedplugins_dir']</code></td>
-    <td>the directory where the merged plugins are stored</td>
+    <td>Liberty farm merged plugin directory</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['pluginInstallRoot']</code></td>
-    <td>liberty farm plugin Install Root</td>
+    <td>Liberty farm plugin Install Root</td>
     <td><code>plugin_install_root</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['plugin_cpy_user']</code></td>
-    <td>the user for pushing the plugins to the central liberty node</td>
+    <td>Liberty plugin copy user</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['plugins_dir']</code></td>
-    <td>the directory where the generated plugins are stored</td>
+    <td>Liberty farm plugin dir</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['sslCertlabel']</code></td>
-    <td>liberty farm ssl Cert label</td>
+    <td>Liberty farm ssl Cert label</td>
     <td><code>definedbyuser</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['sslKeyringLocation']</code></td>
-    <td>liberty farm ssl Keyring Location</td>
+    <td>Liberty farm ssl Stashfile directory</td>
     <td><code>/var/liberty/sslkeyring</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['sslStashfileLocation']</code></td>
-    <td>liberty farm ssl Stashfile Location</td>
+    <td>Liberty farm ssl Stashfile directory</td>
     <td><code>/var/liberty/stashfile</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverName']</code></td>
-    <td>https web server name</td>
+    <td>Liberty farm web server name</td>
     <td><code>websrv</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverPort']</code></td>
-    <td>IBM HTTP Web server port</td>
+    <td>Liberty farm HTTP Web server port</td>
     <td><code>80</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverSecurePort']</code></td>
-    <td>IBM HTTP Secure web server port</td>
+    <td>Liberty farm HTTP Secure web server port</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverhost']</code></td>
-    <td>hostname/IP of the webserver</td>
+    <td>Liberty web server host</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['features']['embeddablecontainer']</code></td>
-    <td>Liberty embeddablecontainer feature</td>
+    <td>Flag which determines whether the embeddablecontainer feature will be installed</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['features']['liberty']</code></td>
-    <td>liberty feature</td>
+    <td>Flag which determines whether the liberty feature will be installed</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['fixpack']</code></td>
-    <td>The fixpack version of Liberty that should be isntalled</td>
+    <td>The fixpack version of Liberty that should be isntalled, for initial installation this may be left blank</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['fixpack_java']</code></td>
-    <td>java fixpack version</td>
+    <td>The java fixpack version to be installed, this field may be left blank</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['force_restart']</code></td>
-    <td>force_restart</td>
+    <td>Liberty force restart</td>
     <td><code>true</code></td>
-  </tr>
-  <tr>
-    <td><code>node['was_liberty']['im_install_dir']</code></td>
-    <td>The installation root directory for the installation manager product binaries</td>
-    <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['im_shared_dir']</code></td>
@@ -185,33 +181,33 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_dir']</code></td>
-    <td>Liberty installation directory</td>
+    <td>The installation root directory for the WebSphere Liberty product binaries</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_grp']</code></td>
-    <td>Liberty install group</td>
+    <td>Operating system group name that will be assigned to the product installation</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_java']</code></td>
-    <td>install_java_flag</td>
+    <td>Java install from archives</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_javafp']</code></td>
-    <td>install_javafp_flag</td>
+    <td>Java fixpack flag</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_user']</code></td>
-    <td>Liberty installation user</td>
+    <td>Operating system userid that will be used to install the product. Userid will be created if it does not exist</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['java_version']</code></td>
-    <td>The Java SDK version that should be installed with the WebSphere Application Server. Example format is 8.0.4.70</td>
-    <td><code>8.0</code></td>
+    <td></td>
+    <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['feature']</code></td>
@@ -220,12 +216,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['httpport']</code></td>
-    <td>Default HTTP Transport Port</td>
+    <td>Liberty server http port</td>
     <td><code>9080</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['httpsport']</code></td>
-    <td>Secure Default HTTP Transport Port</td>
+    <td>Liberty server https port</td>
     <td><code>9443</code></td>
   </tr>
   <tr>
@@ -245,12 +241,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['name']</code></td>
-    <td>Name of Liberty server to be created</td>
+    <td>Liberty server name</td>
     <td><code>defaultServer</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['timeout']</code></td>
-    <td>liberty server01 timeout</td>
+    <td>liberty server timeout</td>
     <td><code>20</code></td>
   </tr>
   <tr>
@@ -265,7 +261,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['users']['admin_user']['role']</code></td>
-    <td>liberty admin_user role</td>
+    <td>liberty admin user role</td>
     <td><code>admin</code></td>
   </tr>
   <tr>
@@ -275,77 +271,77 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v71']['feature']</code></td>
-    <td>feature name for java common_ibm_sdk_v71</td>
+    <td>Feature name for java 7.1, default = com.ibm.sdk.71</td>
     <td><code>com.ibm.sdk.71</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v71']['offering_id']</code></td>
-    <td>Java 7.1 SDK installation manager offering ID value</td>
+    <td>Java 7.1 SDK installation manager offering ID value, default = com.ibm.java.jdk.v71</td>
     <td><code>com.ibm.java.jdk.v71</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v8']['enable']</code></td>
-    <td>Indicates that Java 8 SDK version should be installed</td>
+    <td>Flag to determine whether Java 8 SDK will be installed or not, only one Java flag is applicable</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v8']['feature']</code></td>
-    <td>Java 8 SDK installation manager offering ID value</td>
+    <td>Installation Manager response file option to install Java 8 SDK, default = com.ibm.sdk.8</td>
     <td><code>com.ibm.sdk.8</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v8']['offering_id']</code></td>
-    <td>Java SDK installation manager offering ID value</td>
+    <td>Java SDK installation manager offering ID value, default = com.ibm.java.jdk.v8</td>
     <td><code>com.ibm.java.jdk.v8</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v70']['enable']</code></td>
-    <td>Indicates that WebSphere Liberty Java 7.0 SDK version should be installed</td>
+    <td>Indicates that WebSphere Liberty Java 7 SDK version should be installed, only one Java flag is applicable</td>
     <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v70']['feature']</code></td>
-    <td>feature name for java websphere_sdk_v70</td>
+    <td>Feature name for java common_ibm_sdk_v71, default = com.ibm.sdk.7</td>
     <td><code>com.ibm.sdk.7</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v70']['offering_id']</code></td>
-    <td>offering _id for java websphere_sdk_v70</td>
+    <td>Java 7.0 SDK installation manager offering ID value, default = com.ibm.websphere.liberty.IBMJAVA.v70</td>
     <td><code>com.ibm.websphere.liberty.IBMJAVA.v70</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v80']['enable']</code></td>
-    <td>Indicates that WebSphere Liberty Java 8 SDK version should be installed</td>
+    <td>Indicates that WebSphere Liberty Java 8 SDK version should be installed, only one Java flag is applicable</td>
     <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v80']['feature']</code></td>
-    <td>feature name for java websphere_sdk_v80</td>
+    <td>Feature name for java 8.0, default = com.ibm.sdk.8</td>
     <td><code>com.ibm.sdk.8</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['sdk']['websphere_sdk_v80']['offering_id']</code></td>
-    <td>offering _id for java websphere_sdk_v80</td>
+    <td>Java 8.0 SDK installation manager offering ID value, default = com.ibm.websphere.liberty.IBMJAVA.v80</td>
     <td><code>com.ibm.websphere.liberty.IBMJAVA.v80</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['start_servers']</code></td>
-    <td>List of servers to be started</td>
+    <td>List of liberty application servers to be stopped</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['stop_servers']</code></td>
-    <td>List of servers to be stopped</td>
+    <td>List of liberty application servers to be stopped</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['tmp']</code></td>
-    <td>Temp directory to be used</td>
+    <td>Temp directory to be used for temporary files, this directory will be emptied after the installation</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['wlp_user_dir']</code></td>
-    <td>Liberty directory for user data</td>
+    <td>Liberty directory which product configuration will be written</td>
     <td><code></code></td>
   </tr>
 </table>
