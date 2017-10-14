@@ -45,13 +45,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ssh']['private_key']['content']</code></td>
-    <td>Liberty private key,
-# <md>          :displayname => </td>
+    <td></td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ssh']['private_key']['path']</code></td>
-    <td>Liberty private key path</td>
+    <td>Absolute path of the Liberty private key</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -76,77 +75,77 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['central_node']</code></td>
-    <td>Liberty farm central node</td>
+    <td>Hostname/IP of the liberty node which will gather and merge the plugins. Leave empty when deploying the central node itself</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['httpd_plugins_dir']</code></td>
-    <td>Liberty http plugins dir</td>
+    <td>Liberty farm directory on the web server where the merged plugin will be pushed</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['httpd_user']</code></td>
-    <td>Liberty farm http user</td>
+    <td></td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['logFileName']</code></td>
-    <td>liberty farm log File Name</td>
+    <td>Name of the Liberty farm log file</td>
     <td><code>serverfarm.log</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['mergedplugins_dir']</code></td>
-    <td>Liberty farm merged plugin directory</td>
+    <td>The directory where the merged plugins are stored on the central node</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['pluginInstallRoot']</code></td>
-    <td>Liberty farm plugin Install Root</td>
+    <td>pluginInstallRoot</td>
     <td><code>plugin_install_root</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['plugin_cpy_user']</code></td>
-    <td>Liberty plugin copy user</td>
+    <td>The user for pushing the plugins to the central liberty node</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['plugins_dir']</code></td>
-    <td>Liberty farm plugin dir</td>
+    <td>The directory where the generated plugins are stored</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['sslCertlabel']</code></td>
-    <td>Liberty farm ssl Cert label</td>
+    <td>Name of the ssl Cert label which will be added to the keystore</td>
     <td><code>definedbyuser</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['sslKeyringLocation']</code></td>
-    <td>Liberty farm ssl Stashfile directory</td>
+    <td>Full path to the liberty farm ssl Keyring, path must not include the name of the Keyring file</td>
     <td><code>/var/liberty/sslkeyring</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['sslStashfileLocation']</code></td>
-    <td>Liberty farm ssl Stashfile directory</td>
+    <td>Full path to the Liberty farm ssl Stashfile, path must not include the name of the stash file</td>
     <td><code>/var/liberty/stashfile</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverName']</code></td>
-    <td>Liberty farm web server name</td>
+    <td>A descriptive name for the web server</td>
     <td><code>websrv</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverPort']</code></td>
-    <td>Liberty farm HTTP Web server port</td>
+    <td>HTTP Transport port that the webserver is listening on</td>
     <td><code>80</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverSecurePort']</code></td>
-    <td>Liberty farm HTTP Secure web server port</td>
+    <td></td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['farm']['webserverhost']</code></td>
-    <td>Liberty web server host</td>
+    <td>Host name of the web server, not this DNS name must be resolvable</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -171,7 +170,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['force_restart']</code></td>
-    <td>Liberty force restart</td>
+    <td>If set to true, the server will be restarted, if false, the server will not be restarted</td>
     <td><code>true</code></td>
   </tr>
   <tr>
@@ -191,12 +190,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_java']</code></td>
-    <td>Java install from archives</td>
+    <td>If true, Java will be installed from archives</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['install_javafp']</code></td>
-    <td>Java fixpack flag</td>
+    <td>If true, a java fixpack will be installed</td>
     <td><code>true</code></td>
   </tr>
   <tr>
@@ -211,57 +210,57 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['feature']</code></td>
-    <td>Liberty features that should be included in the server definition</td>
+    <td>Lists the Liberty features that should be included in the feature manager list. For example, webProfile-7.0 adminCenter-1.0</td>
     <td><code>webProfile-7.0 adminCenter-1.0</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['httpport']</code></td>
-    <td>Liberty server http port</td>
+    <td>HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml</td>
     <td><code>9080</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['httpsport']</code></td>
-    <td>Liberty server https port</td>
+    <td>Secure HTTP Transport value that will be set in the defaultHttpEndpoint endpoint in server.xml</td>
     <td><code>9443</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['jvm_params']</code></td>
-    <td>Liberty server JVM settings</td>
+    <td>Set the default JVM heap sizes for the liberty server, for example, -Xms256m -Xmx2048m</td>
     <td><code>-Xms256m -Xmx2048m</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['keystore_id']</code></td>
-    <td>Liberty keystore id</td>
+    <td>Keystore id that will be used when setting up the keyStore attribute in the server.xml</td>
     <td><code>defaultKeyStore</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['keystore_password']</code></td>
-    <td>Liberty Keystore password</td>
+    <td>Liberty keystore password used to protect the Liberty keystore id, this value will be stored in Chef Vault</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['name']</code></td>
-    <td>Liberty server name</td>
+    <td>Name of the initial Liberty server to be created during provisioning</td>
     <td><code>defaultServer</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['timeout']</code></td>
-    <td>liberty server timeout</td>
+    <td>Liberty server timeout value</td>
     <td><code>20</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['users']['admin_user']['name']</code></td>
-    <td>Liberty administrative user name</td>
+    <td>Administrative console username used for accessing the console, the associated password is the admin_user password</td>
     <td><code>admin</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['users']['admin_user']['password']</code></td>
-    <td>Liberty administrative user name password</td>
+    <td>Password for the Liberty administrative user name, this value to be stored in the Chef Vault</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['liberty_servers']['server($INDEX)']['users']['admin_user']['role']</code></td>
-    <td>liberty admin user role</td>
+    <td>Liberty role for which administrative users are to be added to, the admin_user will be added to this role by default</td>
     <td><code>admin</code></td>
   </tr>
   <tr>
