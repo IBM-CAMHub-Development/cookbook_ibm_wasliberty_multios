@@ -56,11 +56,12 @@ directory node['was_liberty']['wlp_user_dir'] do
 end
 
 
-java_home = if File.directory?("#{node['was_liberty']['install_dir']}/java/#{node['was_liberty']['java_version'][0..2]}")
-              "#{node['was_liberty']['install_dir']}/java/#{node['was_liberty']['java_version'][0..2]}"
-            else
-              IO.popen("which java").read.chomp
-            end
+java_home = "#{node['was_liberty']['install_dir']}/java/#{node['was_liberty']['java_version'][0..2]}"
+# if File.directory?("#{node['was_liberty']['install_dir']}/java/#{node['was_liberty']['java_version'][0..2]}")
+#   "#{node['was_liberty']['install_dir']}/java/#{node['was_liberty']['java_version'][0..2]}"
+# else
+#   "/" + IO.popen("which java").read.chomp.split("/")[1]
+# end
 
 directory "#{node['was_liberty']['install_dir']}/etc/" do
   user node['was_liberty']['install_user']
