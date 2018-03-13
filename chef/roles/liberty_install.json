@@ -16,9 +16,10 @@
         "edition": "base",
         "install_user": "root",
         "install_grp": "root",
+        "runas_user": "root",
         "install_dir" : "/opt/IBM/WebSphere/Liberty",
         "java_version" : "8.0",
-        "base_version" : "17.0.2",
+        "base_version" : "17.0.4",
         "wlp_user_dir": "/opt/IBM/WebSphere/Liberty/usr"
       }
     },

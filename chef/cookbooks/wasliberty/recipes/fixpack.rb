@@ -1,6 +1,6 @@
 #########################################################################
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 # <> Fixpack  recipe (fixpack.rb)
 # <> Fixpack recipe, source the version, unpack the file and apply maintenance to the  product

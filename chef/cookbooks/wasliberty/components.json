@@ -10,12 +10,13 @@
                 "sw_repo_user": "repouser"
             },
             "was_liberty": {
-                "base_version": "17.0.2",
+                "base_version": "17.0.4",
                 "edition": "core",
                 "install_dir": "/opt/IBM/WebSphere/Liberty",
                 "install_grp": "root",
                 "install_user": "root",
                 "java_version": "8.0",
+                "runas_user": "root",
                 "wlp_user_dir": "/opt/IBM/WebSphere/Liberty/usr"
             }
         },
@@ -89,12 +90,13 @@
                 "sw_repo_user": "repouser"
             },
             "was_liberty": {
-                "base_version": "17.0.2",
+                "base_version": "17.0.4",
                 "edition": "base",
                 "install_dir": "/opt/IBM/WebSphere/Liberty",
                 "install_grp": "root",
                 "install_user": "root",
                 "java_version": "8.0",
+                "runas_user": "root",
                 "wlp_user_dir": "/opt/IBM/WebSphere/Liberty/usr"
             }
         },
@@ -122,12 +124,13 @@
                 "sw_repo_user": "repouser"
             },
             "was_liberty": {
-                "base_version": "17.0.2",
+                "base_version": "17.0.4",
                 "edition": "nd",
                 "install_dir": "/opt/IBM/WebSphere/Liberty",
                 "install_grp": "root",
                 "install_user": "root",
                 "java_version": "8.0",
+                "runas_user": "root",
                 "wlp_user_dir": "/opt/IBM/WebSphere/Liberty/usr"
             }
         },

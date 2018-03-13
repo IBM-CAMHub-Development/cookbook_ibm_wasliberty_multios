@@ -1,5 +1,5 @@
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 ####################
 # GENERAL SETTINGS
@@ -104,6 +104,21 @@ default['was_liberty']['expand_area'] = node['ibm']['expand_area'] + '/' + 'was_
 #   }
 # }
 
+
+# If the runas user field does not exist, then set to the wasadmin user
+# If the runas_grep does not exist, then set to the install_grp
+runas_grp = if node['was_liberty'].attribute?('runas_grp')
+              node['was_liberty']['runas_grp'].to_s
+            else
+              node['was_liberty']['install_grp'].to_s
+            end
+
+runas_user = if node['was_liberty'].attribute?('runas_user')
+               node['was_liberty']['runas_user'].to_s
+             else
+               node['was_liberty']['install_user'].to_s
+             end
+
 # <> Install mode which you install software with IBM Installation Manager as an administrator(admin), nonadministrator(nonAdmin), or group(group)
 # default['was_liberty']['install_mode'] = 'admin'
 
@@ -116,6 +131,13 @@ if node['was_liberty']['install_user'] == 'root'
       'name' => 'root',
       'gid' => 'root',
       'comment' => 'WAS installation user',
+      'home' => '/root',
+      'shell' => '/bin/bash'
+    },
+    'wasrunas'  =>  {
+      'name' => 'root',
+      'gid' => 'root',
+      'comment' => 'WAS run_as user',
       'home' => '/root',
       'shell' => '/bin/bash'
     }
@@ -135,10 +157,17 @@ else
       'comment' => 'WAS installation user',
       'home' => "/home/#{node['was_liberty']['install_user']}",
       'shell' => '/bin/bash'
+    },
+    'wasrunas'  =>  {
+      'name' => runas_user.to_s,
+      'gid' => runas_grp.to_s,
+      'comment' => 'WAS run_as user',
+      'home' => "/home/#{runas_user}",
+      'shell' => '/bin/bash'
     }
   }
   # <> Installation location of IBM Installation Manager
-  default['was_liberty']['im_install_dir'] = node['was_liberty']['os_users']['wasadmin']['home'] + '/InstallationManager'
+  default['was_liberty']['im_install_dir'] = node['was_liberty']['os_users']['wasadmin']['home'] + '/IBM/InstallationManager'
   # <> WAS installation directory
   default['was_liberty']['install_dir'] = node['was_liberty']['os_users']['wasadmin']['home'] + '/opt/IBM/WebSphere/Liberty'
 end

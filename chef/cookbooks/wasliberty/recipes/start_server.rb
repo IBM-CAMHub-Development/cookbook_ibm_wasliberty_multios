@@ -1,6 +1,6 @@
 #########################################################################
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 # <> Start server recipe (start_server.rb)
 # <> Start server recipe, start liberty servers
@@ -10,6 +10,21 @@
 # Cookbook Name  - wasliberty
 # Recipe         - start_server
 #----------------------------------------------------------------------------------------------------------------------------------------------
+
+# If the runas user field does not exist, then set to the wasadmin user
+# If the runas_grep does not exist, then set to the install_grp
+
+runas_grp = if node['was_liberty'].attribute?('runas_grp')
+              node['was_liberty']['runas_grp'].to_s
+            else
+              node['was_liberty']['install_grp'].to_s
+            end
+
+runas_user = if node['was_liberty'].attribute?('runas_user')
+               node['was_liberty']['runas_user'].to_s
+             else
+               node['was_liberty']['install_user'].to_s
+             end
 
 start_servers = if !node['was_liberty']['start_servers'].empty?
                   node['was_liberty']['start_servers'].split(/[\s,]+/).reject(&:empty?)
@@ -41,13 +56,13 @@ node['was_liberty']['liberty_servers'].each do |srv_index, v|
     variables(
       :jvm_options => jvm_params.split
     )
-    user node['was_liberty']['install_user']
-    group node['was_liberty']['install_grp']
+    owner runas_user
+    group runas_grp
   end
 
   wasliberty_wl_server server_name do
     action :start
-    user node['was_liberty']['install_user']
+    user runas_user
     timeout node['was_liberty']['liberty_servers'][srv_index]['timeout']
     install_dir node['was_liberty']['install_dir']
     force_restart node['was_liberty']['force_restart']

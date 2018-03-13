@@ -1,6 +1,6 @@
 #########################################################################
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 # <> Start server recipe (server_farm.rb)
 # <> Add the required configuration for the liberty server farm
@@ -10,6 +10,15 @@
 # Cookbook Name  - wasliberty
 # Recipe         - server_farm
 #----------------------------------------------------------------------------------------------------------------------------------------------
+
+# If the runas user field does not exist, then set to the wasadmin user
+# If the runas_grep does not exist, then set to the install_grp
+
+runas_user = if node['was_liberty'].attribute?('runas_user')
+               node['was_liberty']['runas_user'].to_s
+             else
+               node['was_liberty']['install_user'].to_s
+             end
 
 # ------- removed as per #1561 --------- #
 # ---- generate the private key file ----- #
@@ -88,7 +97,7 @@ farm_servers.each do |server_name|
   # Start all servers on the node
   wasliberty_wl_server server_name do
     action :nothing
-    user node['was_liberty']['install_user']
+    user runas_user.to_s
     install_dir node['was_liberty']['install_dir']
     force_restart true
     subscribes :start, "wasliberty_xml_file[add_localConnector-1.0_feature]", :immediately
@@ -106,7 +115,7 @@ farm_servers.each do |server_name|
   # Make sure the server is started before generating the plugin
   wasliberty_wl_server server_name do
     action :start
-    user node['was_liberty']['install_user']
+    user runas_user.to_s
     install_dir node['was_liberty']['install_dir']
     force_restart false
   end

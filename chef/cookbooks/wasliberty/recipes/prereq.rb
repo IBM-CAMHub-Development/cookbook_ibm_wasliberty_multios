@@ -1,6 +1,6 @@
 #########################################################################
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 # <> Pre-Requisite recipe (prereq.rb)
 # <> Pre-Requisite recipe to install packages, create users and folders.
@@ -20,7 +20,7 @@ template "/etc/security/limits.d/was-limits.conf" do
   source "was-limits.conf.erb"
   mode '0644'
   variables(
-    :OSUSER => node['was_liberty']['os_users']['wasadmin']['name']
+    :OSUSER => node['was_liberty']['os_users']['wasrunas']['name']
   )
 end
 

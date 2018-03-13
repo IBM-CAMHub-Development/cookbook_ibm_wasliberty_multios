@@ -1,5 +1,5 @@
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 # <> Module (helpers.rb)
 # <> Module with helper functions to compute various liberty editions/settings

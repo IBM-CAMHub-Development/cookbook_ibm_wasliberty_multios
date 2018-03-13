@@ -1,6 +1,6 @@
 #########################################################################
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 # <> Install  recipe (install.rb)
 # <> Installation recipe, source the version, unpack the file and install product
@@ -10,6 +10,20 @@
 # Cookbook Name  - wasliberty
 # Recipe         - config_srv.rb
 #-------------------------------------------------------------------------------
+
+# If the runas user field does not exist, then set to the wasadmin user
+# If the runas_grep does not exist, then set to the install_grp
+runas_grp = if node['was_liberty'].attribute?('runas_grp')
+              node['was_liberty']['runas_grp'].to_s
+            else
+              node['was_liberty']['install_grp'].to_s
+            end
+
+runas_user = if node['was_liberty'].attribute?('runas_user')
+               node['was_liberty']['runas_user'].to_s
+             else
+               node['was_liberty']['install_user'].to_s
+             end
 
 Chef::Log.info("-------------------------------------")
 Chef::Log.info("Start executing recipe: config_srv.rb")
@@ -81,8 +95,8 @@ node['was_liberty']['liberty_servers'].each do |srv_index, v|
   template server_config_file do
     source "server.xml.erb"
     mode '0750'
-    owner node['was_liberty']['install_user']
-    group node['was_liberty']['install_grp']
+    owner runas_user
+    group runas_grp
     variables(
       :SERVER_NAME => server_name,
       :FEATURE_LIST => srv_feature_list,
@@ -103,13 +117,13 @@ node['was_liberty']['liberty_servers'].each do |srv_index, v|
     variables(
       :jvm_options => v['jvm_params'].split
     )
-    owner node['was_liberty']['install_user']
-    group node['was_liberty']['install_grp']
+    owner runas_user
+    group runas_grp
   end
 
   wasliberty_wl_server server_name do
     action :nothing
-    user node['was_liberty']['install_user']
+    user runas_user
     timeout v['timeout']
     install_dir node['was_liberty']['install_dir']
     force_restart true
@@ -118,7 +132,7 @@ node['was_liberty']['liberty_servers'].each do |srv_index, v|
 
   template "#{node['was_liberty']['wlp_user_dir']}/servers/#{server_name}/server.env" do
     source "server.env.erb"
-    owner node['was_liberty']['install_user']
-    group node['was_liberty']['install_grp']
+    owner runas_user
+    group runas_grp
   end
 end

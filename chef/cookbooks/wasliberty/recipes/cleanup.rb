@@ -1,5 +1,5 @@
 ########################################################
-#	  Copyright IBM Corp. 2016, 2017
+#	  Copyright IBM Corp. 2016, 2018
 ########################################################
 # recipe to remove the expand_area / tmp folders from a provisioned machine
 # <> Cleanup recipe (cleanup.rb)

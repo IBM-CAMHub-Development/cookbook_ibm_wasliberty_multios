@@ -55,8 +55,8 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['base_version']</code></td>
-    <td>The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.2</td>
-    <td><code>17.0.2</code></td>
+    <td>The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.4</td>
+    <td><code>17.0.4</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['cleanpackages']</code></td>
@@ -264,6 +264,11 @@ Attributes
     <td><code>admin</code></td>
   </tr>
   <tr>
+    <td><code>node['was_liberty']['runas_user']</code></td>
+    <td>Operating system userid that will be used to run the product. Userid will be created if it does not exist</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
     <td><code>node['was_liberty']['sdk']['common_ibm_sdk_v71']['enable']</code></td>
     <td>Indicates that Java 7.1 SDK version should be installed</td>
     <td><code>false</code></td>
@@ -436,7 +441,7 @@ License and Author
 
 Author:: IBM Corp (<>)
 
-Copyright:: 2017, IBM Corp
+Copyright:: 2018, IBM Corp
 
-License:: Copyright IBM Corp. 2012, 2017
+License:: Copyright IBM Corp. 2012, 2018
 
