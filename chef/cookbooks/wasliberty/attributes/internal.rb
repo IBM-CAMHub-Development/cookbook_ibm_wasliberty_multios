@@ -132,16 +132,13 @@ if node['was_liberty']['install_user'] == 'root'
       'gid' => 'root',
       'comment' => 'WAS installation user',
       'home' => '/root',
-      'shell' => '/bin/bash'
-    },
+      'shell' => '/bin/bash' },
     'wasrunas'  =>  {
       'name' => 'root',
       'gid' => 'root',
       'comment' => 'WAS run_as user',
       'home' => '/root',
-      'shell' => '/bin/bash'
-    }
-  }
+      'shell' => '/bin/bash' } }
   # <> Installation location of IBM Installation Manager
   default['was_liberty']['im_install_dir'] = '/opt/IBM/InstallationManager'
   # <> WAS installation directory
@@ -156,16 +153,13 @@ else
       'gid' => node['was_liberty']['install_grp'],
       'comment' => 'WAS installation user',
       'home' => "/home/#{node['was_liberty']['install_user']}",
-      'shell' => '/bin/bash'
-    },
+      'shell' => '/bin/bash' },
     'wasrunas'  =>  {
       'name' => runas_user.to_s,
       'gid' => runas_grp.to_s,
       'comment' => 'WAS run_as user',
       'home' => "/home/#{runas_user}",
-      'shell' => '/bin/bash'
-    }
-  }
+      'shell' => '/bin/bash' } }
   # <> Installation location of IBM Installation Manager
   default['was_liberty']['im_install_dir'] = node['was_liberty']['os_users']['wasadmin']['home'] + '/IBM/InstallationManager'
   # <> WAS installation directory
@@ -176,24 +170,20 @@ end
 default['was_liberty']['profile_id'] = {
   'core'  => 'WebSphere Liberty Core',
   'base'  => 'WebSphere Liberty',
-  'nd'  => 'WebSphere Liberty ND'
-}
+  'nd'  => 'WebSphere Liberty ND' }
 
 # <> IBM Installation Manager offering ID to be used for installation, based on WAS edition
 default['was_liberty']['offering_id'] = {
   'core'  => 'com.ibm.websphere.liberty.CORE',
   'base'  => 'com.ibm.websphere.liberty.BASE',
-  'nd'    => 'com.ibm.websphere.liberty.ND'
-}
+  'nd'    => 'com.ibm.websphere.liberty.ND' }
 
 
 # <> WAS installation archives for liberty core v9.0 edition
 default['was_liberty']['archive_names']['core'] = {
   'file1'  =>  {
     'filename' =>  'was.repo.16002.liberty.core.zip',
-    'sha256'   =>  '5247b9e8ba7eaa14c2d7e8f46ee1e869228adb3b1afec847fc2a8a387f2c6c0e'
-  }
-}
+    'sha256'   =>  '5247b9e8ba7eaa14c2d7e8f46ee1e869228adb3b1afec847fc2a8a387f2c6c0e' } }
 
 # # <> IBM SDK, Java Technology Edition, Version 8
 default['was_liberty']['archive_names']['java8'] = {
@@ -202,26 +192,22 @@ default['was_liberty']['archive_names']['java8'] = {
   'file2'  =>  { 'filename' =>  'was.repo.9000.java8_part2.zip',
                  'sha256'   =>  '8399caef9fe5390370737c718394f546c7d3300bce65cc70876389ffb233ac63' },
   'file3'  =>  { 'filename' =>  'was.repo.9000.java8_part3.zip',
-                 'sha256'   =>  '245ade5bc8c1117b6f32968bf8f5dc4296329aa7114f71ac950a0f07e8e1998e' }
-}
+                 'sha256'   =>  '245ade5bc8c1117b6f32968bf8f5dc4296329aa7114f71ac950a0f07e8e1998e' } }
 
 #NOTE: download instructions for above archives: http://www-01.ibm.com/support/docview.wss?uid=swg27038625
 
 #<> Generic WAS fixpack filenames
 default['was_liberty']['fixpack_names'] = {
   'file1'  =>  { 'filename' =>  node['was_liberty']['fixpack'] +'-WS-LIBERTY-CORE-FP.zip',
-                 'sha256' => '3533807e14f1984198d29ae5dbc607e6bd87c54c4c290f41a941ab9ed53a1e4d' }
-}
+                 'sha256' => '3533807e14f1984198d29ae5dbc607e6bd87c54c4c290f41a941ab9ed53a1e4d' } }
 
 # <> Generic Java 8 fixpack filenames
 default['was_liberty']['fixpack_names']['java8'] = {
   'file1'  =>  { 'filename' =>  node['was_liberty']['fixpack_java'] +"-JavaSE-SDK-MultiOS-repo-part1.zip" },
   'file2'  =>  { 'filename' =>  node['was_liberty']['fixpack_java'] +"-JavaSE-SDK-MultiOS-repo-part2.zip" },
-  'file3'  =>  { 'filename' =>  node['was_liberty']['fixpack_java'] +"-JavaSE-SDK-MultiOS-repo-part3.zip" }
-}
+  'file3'  =>  { 'filename' =>  node['was_liberty']['fixpack_java'] +"-JavaSE-SDK-MultiOS-repo-part3.zip" } }
 
 #<> WAS Liberty Asset packages
 default['was_liberty']['fixpack_names']['feature_repo'] = {
   'filename' =>  'wlp-featureRepo-' + node['was_liberty']['fixpack'] + '.zip',
-  'sha256' => '65afa87aad5cc65daf1a93e1004f7ce826e40d888916760404c6afbb10283455'
-}
+  'sha256' => '65afa87aad5cc65daf1a93e1004f7ce826e40d888916760404c6afbb10283455' }

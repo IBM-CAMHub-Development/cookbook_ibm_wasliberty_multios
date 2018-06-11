@@ -1,13 +1,10 @@
 ########################################################
 # Copyright IBM Corp. 2016, 2018
 ########################################################
-#
-# Cookbook Name:: wasliberty
-###############################################################################
-actions :add_element
+
 default_action :add_element
 
-attribute :source, :kind_of => String, :name_attribute => true
-attribute :search_path, :kind_of => String, :required => true
-attribute :content, :kind_of => String, :default => nil
-attribute :node_attrs, :kind_of => Hash, :default => {}
+property :source, :kind_of => String, :name_attribute => true
+property :search_path, :kind_of => String, :required => true
+property :content, :kind_of => String, :default => nil
+property :node_attrs, :kind_of => Hash, :default => {}

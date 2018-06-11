@@ -238,8 +238,7 @@ default['was_liberty']['edition'] = 'base'
 # <md>          :parm_type => 'node'
 default['was_liberty']['features'] = {
   'embeddablecontainer' => "true",
-  'liberty'             => "true"
-}
+  'liberty'             => "true" }
 
 ####################
 # Liberty Product Installation Settings
@@ -415,8 +414,7 @@ default['was_liberty']['sdk'] = {
                             'feature' => "com.ibm.sdk.8" },
   'websphere_sdk_v70'  => { 'enable' => "false",
                             'offering_id' => "com.ibm.websphere.liberty.IBMJAVA.v70",
-                            'feature' => "com.ibm.sdk.7" }
-}
+                            'feature' => "com.ibm.sdk.7" } }
 
 # <> Liberty version to install
 # <md> attribute 'was_liberty/base_version',
@@ -699,11 +697,7 @@ default['was_liberty']['liberty_servers'] = {
                    'admin_user' => {
                      'name' => "admin",
                      'password' => "",
-                     'role' => "admin"
-                   }
-                 }
-  }
-}
+                     'role' => "admin" } } } }
 
 # server farm configuration
 # <md> attribute 'was_liberty/farm/webserverhost',

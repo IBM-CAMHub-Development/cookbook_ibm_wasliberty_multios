@@ -1,11 +1,6 @@
 ########################################################
-# Copyright IBM Corp. 2012, 2018
+# Copyright IBM Corp. 2016, 2018
 ########################################################
-#
-# Cookbook Name:: wasliberty
-###############################################################################
-
-use_inline_resources
 
 def srv_running
   return unless RUBY_PLATFORM =~ /linux/
@@ -74,12 +69,10 @@ end
 action :start do
   if srv_running && !@new_resource.force_restart
     Chef::Log.info("Server #{new_resource.name} is already running")
-    new_resource.updated_by_last_action(false)
   else # server not running, OR force_restart = true, OR...both !
     if srv_running # and force_restart = true ...
       stop_srv
     end
     start_srv
-    new_resource.updated_by_last_action(true)
   end
 end

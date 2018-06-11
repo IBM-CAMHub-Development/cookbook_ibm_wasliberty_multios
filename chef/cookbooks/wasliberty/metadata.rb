@@ -6,10 +6,15 @@ name 'wasliberty'
 maintainer 'IBM Corp'
 maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2018'
+issues_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios/issues'
+source_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios'
+chef_version '>= 12.5' if respond_to?(:chef_version)
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.0.2'
+version '2.0.0'
 depends 'ibm_cloud_utils'
 depends 'im'
+supports 'redhat'
+supports 'debian'
 description <<-EOF
 ## DESCRIPTION
 Installs/Configures WAS Liberty

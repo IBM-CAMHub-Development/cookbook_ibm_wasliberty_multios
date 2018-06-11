@@ -1,11 +1,6 @@
 ########################################################
 # Copyright IBM Corp. 2016, 2018
 ########################################################
-#
-# Cookbook Name:: wasliberty
-###############################################################################
-
-use_inline_resources
 
 require "rexml/document"
 include REXML
@@ -71,8 +66,7 @@ action :add_element do
     fdesc = ::File.open(new_resource.source, 'w')
     doc.write(fdesc)
     fdesc.close
-    new_resource.updated_by_last_action(true)
   else
-    new_resource.updated_by_last_action(false)
+    Chef::Log.info "Nothing Changes"
   end
 end

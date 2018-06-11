@@ -27,7 +27,8 @@ Requirements
 
 ### Platform:
 
-*No platforms defined*
+* Redhat
+* Debian
 
 ### Cookbooks:
 
