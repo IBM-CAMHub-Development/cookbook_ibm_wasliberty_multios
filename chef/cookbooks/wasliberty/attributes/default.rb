@@ -218,7 +218,7 @@ default['was_liberty']['edition'] = 'base'
 
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => 'true',
+# <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :immutable_after_create => 'true',
 # <md>          :precedence_level => 'node',
@@ -237,7 +237,7 @@ default['was_liberty']['edition'] = 'base'
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node'
 default['was_liberty']['features'] = {
-  'embeddablecontainer' => "true",
+  'embeddablecontainer' => "false",
   'liberty'             => "true" }
 
 ####################
@@ -419,17 +419,17 @@ default['was_liberty']['sdk'] = {
 # <> Liberty version to install
 # <md> attribute 'was_liberty/base_version',
 # <md>          :displayname => 'Liberty version',
-# <md>          :description => 'The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.4',
+# <md>          :description => 'The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 18.0.2',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => '17.0.4',
+# <md>          :default => '18.0.2',
 # <md>          :selectable => 'true',
 # <md>          :immutable_after_create => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
 # <md>          :hidden => 'false',
 # <md>          :secret => 'false'
-default['was_liberty']['base_version'] = "17.0.4" # ~ip_checker
+default['was_liberty']['base_version'] = "18.0.2" # ~ip_checker
 
 # <> Java version to install
 # <md> attribute 'was_liberty/java_version',

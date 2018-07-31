@@ -22,8 +22,8 @@
     },
     "was_liberty": {
         "base_version": {
-            "default": "17.0.4",
-            "description": "The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.4",
+            "default": "18.0.2",
+            "description": "The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 18.0.2",
             "displayname": "Liberty version",
             "hidden": "false",
             "immutable_after_create": "true",
@@ -273,7 +273,7 @@
         },
         "features": {
             "embeddablecontainer": {
-                "default": "true",
+                "default": "false",
                 "description": "Flag which determines whether the embeddablecontainer feature will be installed",
                 "displayname": "Liberty embeddablecontainer flag",
                 "hidden": "false",

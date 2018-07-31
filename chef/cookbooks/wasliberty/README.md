@@ -56,8 +56,8 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['base_version']</code></td>
-    <td>The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.4</td>
-    <td><code>17.0.4</code></td>
+    <td>The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 18.0.2</td>
+    <td><code>18.0.2</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['cleanpackages']</code></td>
@@ -152,7 +152,7 @@ Attributes
   <tr>
     <td><code>node['was_liberty']['features']['embeddablecontainer']</code></td>
     <td>Flag which determines whether the embeddablecontainer feature will be installed</td>
-    <td><code>true</code></td>
+    <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['features']['liberty']</code></td>

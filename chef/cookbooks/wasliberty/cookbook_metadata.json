@@ -6,13 +6,15 @@
                 "16.0.4",
                 "17.0.1",
                 "17.0.2",
-                "17.0.4"
+                "17.0.4",
+                "18.0.2"
             ],
             "minor_version": [
                 "16.0.4",
                 "17.0.1",
                 "17.0.2",
-                "17.0.4"
+                "17.0.4",
+                "18.0.2"
             ],
             "platforms": [
                 "RHEL 6.x",
@@ -55,6 +57,12 @@
                 "X86_64": {
                     "repo_root": "Installed from IM Repository",
                     "file": ["com.ibm.websphere.liberty.BASE_17.0.2.20170523_1818", "com.ibm.websphere.liberty.CORE_17.0.2.20170523_1818", "com.ibm.websphere.liberty.ND_17.0.2.20170523_1818"]
+                }
+            },
+            "18.0.2": {
+                "X86_64": {
+                    "repo_root": "Installed from IM Repository",
+                    "file": ["com.ibm.websphere.liberty.BASE_18.0.2.20180619_0403", "com.ibm.websphere.liberty.CORE_18.0.2.20180619_0403", "com.ibm.websphere.liberty.ND_18.0.2.20180619_0403"]
                 }
             }
         },

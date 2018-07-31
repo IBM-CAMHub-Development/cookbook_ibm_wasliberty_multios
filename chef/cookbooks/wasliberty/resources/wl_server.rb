@@ -1,8 +1,8 @@
 ########################################################
 # Copyright IBM Corp. 2016, 2018
 ########################################################
-actions :add_element
-default_action :add_element
+actions :start, :stop
+default_action :start
 
 #property :name, :kind_of => String, :name_attribute => true
 property :install_dir, :kind_of => String

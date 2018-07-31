@@ -10,7 +10,7 @@
                 "sw_repo_user": "repouser"
             },
             "was_liberty": {
-                "base_version": "17.0.4",
+                "base_version": "18.0.2",
                 "edition": "core",
                 "install_dir": "/opt/IBM/WebSphere/Liberty",
                 "install_grp": "root",
@@ -90,7 +90,7 @@
                 "sw_repo_user": "repouser"
             },
             "was_liberty": {
-                "base_version": "17.0.4",
+                "base_version": "18.0.2",
                 "edition": "base",
                 "install_dir": "/opt/IBM/WebSphere/Liberty",
                 "install_grp": "root",
@@ -124,7 +124,7 @@
                 "sw_repo_user": "repouser"
             },
             "was_liberty": {
-                "base_version": "17.0.4",
+                "base_version": "18.0.2",
                 "edition": "nd",
                 "install_dir": "/opt/IBM/WebSphere/Liberty",
                 "install_grp": "root",

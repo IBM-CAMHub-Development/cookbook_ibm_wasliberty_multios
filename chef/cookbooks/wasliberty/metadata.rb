@@ -10,7 +10,7 @@ issues_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios
 source_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios'
 chef_version '>= 12.5' if respond_to?(:chef_version)
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '2.0.0'
+version '2.0.1'
 depends 'ibm_cloud_utils'
 depends 'im'
 supports 'redhat'
@@ -53,8 +53,8 @@ attribute 'ssh/private_key/path',
           :selectable => 'true',
           :type => 'string'
 attribute 'was_liberty/base_version',
-          :default => '17.0.4',
-          :description => 'The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 17.0.4',
+          :default => '18.0.2',
+          :description => 'The release and fixpack level for WebSphere Liberty to be installed. Example formats are 8.5.5.11 or 18.0.2',
           :displayname => 'Liberty version',
           :hidden => 'false',
           :immutable_after_create => 'true',
@@ -273,7 +273,7 @@ attribute 'was_liberty/farm/webserverhost',
           :selectable => 'true',
           :type => 'string'
 attribute 'was_liberty/features/embeddablecontainer',
-          :default => 'true',
+          :default => 'false',
           :description => 'Flag which determines whether the embeddablecontainer feature will be installed',
           :displayname => 'Liberty embeddablecontainer flag',
           :hidden => 'false',
