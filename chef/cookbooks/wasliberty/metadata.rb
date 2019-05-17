@@ -1,11 +1,11 @@
 ########################################################
-#	  Copyright IBM Corp. 2016, 2016
+#   Copyright IBM Corp. 2016, 2019
 ########################################################
 
 name 'wasliberty'
 maintainer 'IBM Corp'
 maintainer_email ''
-license 'Copyright IBM Corp. 2012, 2018'
+license 'Copyright IBM Corp. 2012, 2019'
 issues_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios/issues'
 source_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios'
 chef_version '>= 12.5' if respond_to?(:chef_version)
@@ -25,7 +25,7 @@ Installs/Configures WAS Liberty
 * Ubuntu Server 14.04 or greater
 
 ## Versions
-WAS Liberty version 16.0.0.4
+WAS Liberty version 18.0.0.2
 
 ## Use Cases
 * Product installation
@@ -296,7 +296,7 @@ attribute 'was_liberty/features/liberty',
           :type => 'string'
 attribute 'was_liberty/fixpack',
           :default => '',
-          :description => 'The fixpack version of Liberty that should be isntalled, for initial installation this may be left blank',
+          :description => 'The fixpack version of Liberty that should be installed, for initial installation this may be left blank.',
           :displayname => 'liberty fixpack version',
           :hidden => 'false',
           :immutable_after_create => 'true',
@@ -308,10 +308,70 @@ attribute 'was_liberty/fixpack',
           :type => 'string'
 attribute 'was_liberty/fixpack_java',
           :default => '',
-          :description => 'The java fixpack version to be installed, this field may be left blank',
+          :description => 'The java fixpack version to be installed, this field may be left blank.',
           :displayname => 'Java fixpack version',
           :hidden => 'false',
           :immutable_after_create => 'true',
+          :parm_type => 'node',
+          :precedence_level => 'node',
+          :required => 'recommended',
+          :secret => 'false',
+          :selectable => 'true',
+          :type => 'string'
+attribute 'was_liberty/fixpack_names/file1/filename',
+          :default => '',
+          :description => 'The fixpack filename of Liberty that should be installed, for initial installation this may be left blank.',
+          :displayname => 'liberty fixpack filename',
+          :hidden => 'false',
+          :immutable_after_create => 'false',
+          :parm_type => 'node',
+          :precedence_level => 'node',
+          :required => 'recommended',
+          :secret => 'false',
+          :selectable => 'true',
+          :type => 'string'
+attribute 'was_liberty/fixpack_names/file1/sha256',
+          :default => '',
+          :description => 'The fixpack filename sha256 hash (can be computed using linux command sha256sum *filename*), for initial installation this may be left blank.',
+          :displayname => 'liberty fixpack filename sha256 hash',
+          :hidden => 'false',
+          :immutable_after_create => 'false',
+          :parm_type => 'node',
+          :precedence_level => 'node',
+          :required => 'recommended',
+          :secret => 'false',
+          :selectable => 'true',
+          :type => 'string'
+attribute 'was_liberty/fixpack_names/java8/file1/filename',
+          :default => '',
+          :description => 'The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 1 filename. There will be 3 archive files in total. For initial installation this may be left blank.',
+          :displayname => 'liberty java file1 filename',
+          :hidden => 'false',
+          :immutable_after_create => 'false',
+          :parm_type => 'node',
+          :precedence_level => 'node',
+          :required => 'recommended',
+          :secret => 'false',
+          :selectable => 'true',
+          :type => 'string'
+attribute 'was_liberty/fixpack_names/java8/file2/filename',
+          :default => '',
+          :description => 'The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 2 filename. There will be 3 archive files in total. For initial installation this may be left blank.',
+          :displayname => 'liberty java file1 filename',
+          :hidden => 'false',
+          :immutable_after_create => 'false',
+          :parm_type => 'node',
+          :precedence_level => 'node',
+          :required => 'recommended',
+          :secret => 'false',
+          :selectable => 'true',
+          :type => 'string'
+attribute 'was_liberty/fixpack_names/java8/file3/filename',
+          :default => '',
+          :description => 'The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 3 filename. There will be 3 archive files in total. For initial installation this may be left blank.',
+          :displayname => 'liberty java file3 filename',
+          :hidden => 'false',
+          :immutable_after_create => 'false',
           :parm_type => 'node',
           :precedence_level => 'node',
           :required => 'recommended',

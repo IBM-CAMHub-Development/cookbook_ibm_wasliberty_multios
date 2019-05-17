@@ -1,5 +1,5 @@
 ########################################################
-#	  Copyright IBM Corp. 2016, 2018
+#	  Copyright IBM Corp. 2016, 2019
 ########################################################
 
 ####################
@@ -449,7 +449,7 @@ default['was_liberty']['java_version'] = "8.0"
 # <> Liberty fixpack to install
 # <md> attribute 'was_liberty/fixpack',
 # <md>          :displayname => 'liberty fixpack version',
-# <md>          :description => 'The fixpack version of Liberty that should be isntalled, for initial installation this may be left blank' ,
+# <md>          :description => 'The fixpack version of Liberty that should be installed, for initial installation this may be left blank.' ,
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
@@ -461,6 +461,78 @@ default['was_liberty']['java_version'] = "8.0"
 # <md>          :secret => 'false'
 default['was_liberty']['fixpack'] = "" # ~ip_checker
 
+# <> Fixpack filename
+# <md> attribute 'was_liberty/fixpack_names/file1/filename',
+# <md>           :default => '',
+# <md>           :description => 'The fixpack filename of Liberty that should be installed, for initial installation this may be left blank.',
+# <md>           :displayname => 'liberty fixpack filename',
+# <md>           :hidden => 'false',
+# <md>           :immutable_after_create => 'false',
+# <md>           :parm_type => 'node',
+# <md>           :precedence_level => 'node',
+# <md>           :required => 'recommended',
+# <md>           :secret => 'false',
+# <md>           :selectable => 'true',
+# <md>           :type => 'string'
+  
+# <> Fixpack sha256 hash  
+# <md> attribute 'was_liberty/fixpack_names/file1/sha256',
+# <md>           :default => '',
+# <md>           :description => 'The fixpack filename sha256 hash (can be computed using linux command sha256sum *filename*), for initial installation this may be left blank.',
+# <md>           :displayname => 'liberty fixpack filename sha256 hash',
+# <md>           :hidden => 'false',
+# <md>           :immutable_after_create => 'false',
+# <md>           :parm_type => 'node',
+# <md>           :precedence_level => 'node',
+# <md>           :required => 'recommended',
+# <md>           :secret => 'false',
+# <md>           :selectable => 'true',
+# <md>           :type => 'string'
+  
+# <> Java Fixpack part1 name
+# <md> attribute 'was_liberty/fixpack_names/java8/file1/filename',
+# <md>           :default => '',
+# <md>           :description => 'The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 1 filename. There will be 3 archive files in total. For initial installation this may be left blank.',
+# <md>           :displayname => 'liberty java file1 filename',
+# <md>           :hidden => 'false',
+# <md>           :immutable_after_create => 'false',
+# <md>           :parm_type => 'node',
+# <md>           :precedence_level => 'node',
+# <md>           :required => 'recommended',
+# <md>           :secret => 'false',
+# <md>           :selectable => 'true',
+# <md>           :type => 'string'
+
+# <> Java Fixpack part2 name
+# <> Liberty servers parameters
+# <md> attribute 'was_liberty/fixpack_names/java8/file2/filename',
+# <md>           :default => '',
+# <md>           :description => 'The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 2 filename. There will be 3 archive files in total. For initial installation this may be left blank.',
+# <md>           :displayname => 'liberty java file1 filename',
+# <md>           :hidden => 'false',
+# <md>           :immutable_after_create => 'false',
+# <md>           :parm_type => 'node',
+# <md>           :precedence_level => 'node',
+# <md>           :required => 'recommended',
+# <md>           :secret => 'false',
+# <md>           :selectable => 'true',
+# <md>           :type => 'string'
+
+# <> Java Fixpack part3 name  
+# <> Liberty servers parameters  
+# <md> attribute 'was_liberty/fixpack_names/java8/file3/filename',
+# <md>           :default => '',
+# <md>           :description => 'The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 3 filename. There will be 3 archive files in total. For initial installation this may be left blank.',
+# <md>           :displayname => 'liberty java file3 filename',
+# <md>           :hidden => 'false',
+# <md>           :immutable_after_create => 'false',
+# <md>           :parm_type => 'node',
+# <md>           :precedence_level => 'node',
+# <md>           :required => 'recommended',
+# <md>           :secret => 'false',
+# <md>           :selectable => 'true',
+# <md>           :type => 'string'
+  
 # <> if true, IBM Java will be installed from archives
 # <md> attribute 'was_liberty/install_java',
 # <md>          :displayname => 'Java install from archives',
@@ -480,8 +552,7 @@ default['was_liberty']['install_java'] = "true"
 # <> Java fixpack to install
 # <md> attribute 'was_liberty/fixpack_java',
 # <md>          :displayname => 'Java fixpack version',
-# <md>          :description => 'The java fixpack version to be installed, this field may be left blank',
-
+# <md>          :description => 'The java fixpack version to be installed, this field may be left blank.',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => '',
@@ -493,6 +564,7 @@ default['was_liberty']['install_java'] = "true"
 # <md>          :secret => 'false'
 
 default['was_liberty']['fixpack_java'] = "" # ~ip_checker
+    
 # <> if true, IBM Java fp will be installed
 # <md> attribute 'was_liberty/install_javafp',
 # <md>          :displayname => 'Java fixpack flag',

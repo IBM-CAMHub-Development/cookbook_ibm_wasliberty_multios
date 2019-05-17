@@ -1,6 +1,6 @@
 #########################################################################
 ########################################################
-#	  Copyright IBM Corp. 2016, 2018
+#	  Copyright IBM Corp. 2016, 2019
 ########################################################
 # <> Fixpack  recipe (fixpack.rb)
 # <> Fixpack recipe, source the version, unpack the file and apply maintenance to the  product
@@ -55,6 +55,7 @@ if node['was_liberty']['install_javafp'] == "true"
         mode '0755'
         checksum sha256
         remove_local node['was_liberty']['cleanpackages']
+        repo_self_signed_cert node['ibm']['sw_repo_self_signed_cert']
         not_if { ::File.directory?("#{node['was_liberty']['expand_area']}/was-v90/java8-fp/native") }
     end
   end

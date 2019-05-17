@@ -10,7 +10,7 @@ Installs/Configures WAS Liberty
 * Ubuntu Server 14.04 or greater
 
 ## Versions
-WAS Liberty version 16.0.0.4
+WAS Liberty version 18.0.0.2
 
 ## Use Cases
 * Product installation
@@ -161,12 +161,37 @@ Attributes
   </tr>
   <tr>
     <td><code>node['was_liberty']['fixpack']</code></td>
-    <td>The fixpack version of Liberty that should be isntalled, for initial installation this may be left blank</td>
+    <td>The fixpack version of Liberty that should be installed, for initial installation this may be left blank.</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['was_liberty']['fixpack_java']</code></td>
-    <td>The java fixpack version to be installed, this field may be left blank</td>
+    <td>The java fixpack version to be installed, this field may be left blank.</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['fixpack_names']['file1']['filename']</code></td>
+    <td>The fixpack filename of Liberty that should be installed, for initial installation this may be left blank.</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['fixpack_names']['file1']['sha256']</code></td>
+    <td>The fixpack filename sha256 hash (can be computed using linux command sha256sum *filename*), for initial installation this may be left blank.</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['fixpack_names']['java8']['file1']['filename']</code></td>
+    <td>The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 1 filename. There will be 3 archive files in total. For initial installation this may be left blank.</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['fixpack_names']['java8']['file2']['filename']</code></td>
+    <td>The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 2 filename. There will be 3 archive files in total. For initial installation this may be left blank.</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['was_liberty']['fixpack_names']['java8']['file3']['filename']</code></td>
+    <td>The IBM Java SDK 8 all platforms fixpack (http://www-01.ibm.com/support/docview.wss?uid=swg24042430#80535) archive part 3 filename. There will be 3 archive files in total. For initial installation this may be left blank.</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -442,7 +467,7 @@ License and Author
 
 Author:: IBM Corp (<>)
 
-Copyright:: 2018, IBM Corp
+Copyright:: 2019, IBM Corp
 
-License:: Copyright IBM Corp. 2012, 2018
+License:: Copyright IBM Corp. 2012, 2019
 
