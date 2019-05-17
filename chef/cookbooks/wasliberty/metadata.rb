@@ -10,7 +10,7 @@ issues_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios
 source_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_wasliberty_multios'
 chef_version '>= 12.5' if respond_to?(:chef_version)
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '2.0.1'
+version '2.0.2'
 depends 'ibm_cloud_utils'
 depends 'im'
 supports 'redhat'

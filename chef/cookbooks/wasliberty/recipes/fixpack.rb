@@ -37,6 +37,7 @@ node['was_liberty']['fixpack_names'].each_pair do |_p, v|
       mode '0755'
       checksum sha256
       remove_local node['was_liberty']['cleanpackages']
+      repo_self_signed_cert node['ibm']['sw_repo_self_signed_cert']
       not_if { ::File.directory?("#{node['was_liberty']['expand_area']}/was-v90/was-liberty-fp/native") }
   end
 end
